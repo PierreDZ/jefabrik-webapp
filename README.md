@@ -1,5 +1,11 @@
 # jefabrik-analitycs-app
 
+## Project description
+```
+Creating a Web Application for Jefabrik clients to check their Configurator and follow it's activity and changes
+```
+
+
 ## Project setup
 ```
 npm install
