@@ -4,10 +4,17 @@ import Dashboard from '../views/Dashboard.vue'
 import Tracking from '../views/Tracking.vue'
 import Integration from '../views/Integration.vue'
 import Personalization from '../views/Personalization.vue'
+import Login from '../views/Login.vue'
+
 
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path: '/',
+    name: 'Login',
+    component: Login
+  },
   {
     path: '/Dashboard',
     name: 'Dashboard',
@@ -34,6 +41,7 @@ const routes = [
 ]
 
 const router = new VueRouter({
+  mode: 'history',
   routes
 })
 

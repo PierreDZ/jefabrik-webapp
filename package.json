@@ -16,6 +16,8 @@
     "@iconify/icons-bi": "^1.1.5",
     "@iconify/icons-bx": "^1.1.0",
     "@iconify/icons-eos-icons": "^1.1.0",
+    "@iconify/icons-flat-color-icons": "^1.1.0",
+    "@iconify/icons-la": "^1.1.0",
     "@iconify/icons-line-md": "^1.1.0",
     "@iconify/vue": "^1.0.6",
     "@vue/cli-plugin-babel": "~4.5.0",

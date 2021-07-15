@@ -1,21 +1,13 @@
 <template>
   <div id="app">
-    <Navigation />
     <router-view />
-    <UserInfos />
   </div>
 </template>
 
 <script>
-import Navigation from '@/components/Navigation.vue'
-import UserInfos from '@/components/UserInfos.vue'
 
 export default {
-  name: 'App',
-  components: {
-    Navigation,
-    UserInfos
-  }
+  name: 'App'
 }
 </script>
 
@@ -23,7 +15,7 @@ export default {
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-body {
+*, body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -32,7 +24,6 @@ body {
 #app {
   height: 100vh;
   width: 100vw;
-  margin: 50px 0 0 0;
   font-family: Poppins, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -56,6 +47,10 @@ body {
 
   #user-infos {
     grid-column: 3/4;
+  }
+
+  .login {
+    grid-column: 1/4;
   }
 }
 </style>
