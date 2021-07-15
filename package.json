@@ -13,6 +13,11 @@
     "vue-router": "^3.2.0"
   },
   "devDependencies": {
+    "@iconify/icons-bi": "^1.1.5",
+    "@iconify/icons-bx": "^1.1.0",
+    "@iconify/icons-eos-icons": "^1.1.0",
+    "@iconify/icons-line-md": "^1.1.0",
+    "@iconify/vue": "^1.0.6",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
