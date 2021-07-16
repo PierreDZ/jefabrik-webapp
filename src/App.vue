@@ -29,28 +29,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-
-  display: grid;
-  gap: 0.5rem;
-  grid-template-columns: 1fr 6fr 2fr;
-
-  #nav {
-    grid-column: 1/2;
-  }
-
-  .dashboard,
-  .integration,
-  .personalization,
-  .tracking-infos {
-    grid-column: 2/3;
-  }
-
-  #user-infos {
-    grid-column: 3/4;
-  }
-
-  .login {
-    grid-column: 1/4;
-  }
 }
 </style>

@@ -4,22 +4,12 @@
       <section class="log">
           <div class="inner-log">
               <p>Let's get started</p>
-              <div class="inner-btn">
-                <button>
-                    <IconifyIcon :icon="icons.googleIcon" :style="{fontSize: '24px'}" />
-                    Log in with Google
-                </button>
-                <button>
-                    <IconifyIcon :icon="icons.facebookIcon" :style="{color: '#ffffff', fontSize: '24px'}" />
-                    Log in with Facebook
-                </button>
-              </div>
               <form>
                   <label for="email">Email adress</label>
-                  <input type="mail" name="email" id="email" required>
+                  <input type="mail" name="email" id="email">
                   <label for="password">Password</label>
-                  <input type="password" name="password" id="password" required>
-                  <button type="submit">Log In</button>
+                  <input type="password" name="password" id="password">
+                  <button type="submit" @click="login">Log In</button>
               </form>
           </div>
       </section>
@@ -27,25 +17,17 @@
 </template>
 
 <script>
-import IconifyIcon from '@iconify/vue';
-import googleIcon from '@iconify/icons-flat-color-icons/google';
-import facebookIcon from '@iconify/icons-la/facebook';
-
 export default {
     name: 'Login',
-    components: {
-        IconifyIcon
-    },
     data() {
 		return {
-			icons: {
-				googleIcon,
-                facebookIcon
-			},
+			
 		};
 	},
     methods: {
-       
+       login: function () {
+           this.$router.push('/Dashboard');
+       }
     }
 }
 </script>
@@ -54,6 +36,7 @@ export default {
 
     .login {
         display: grid;
+        height: 100%;
         grid-template-columns: repeat(2, 1fr);
 
         .background-img {
@@ -70,51 +53,11 @@ export default {
                 flex-direction: column;
 
                 p {
-                    margin-top: 156px;
+                    margin-top: 25%;
                     margin-bottom: 50px;
                     color: black;
                     font-size: 36px;
                     font-weight: bold;
-                }
-
-                .inner-btn {
-                    display: flex;
-                    justify-content: space-between;
-                    margin-bottom: 50px;
-
-                    button {
-                        display: inline-block;
-                        vertical-align: middle;
-                        border: none;
-                        border-radius: 10px;
-                        width: 222px;
-                        height: 46px;
-                        line-height: 3;
-                        cursor: pointer;
-                        transition: all 0.3s ease-in-out;
-
-                        svg {
-
-                            vertical-align: middle;
-                        }
-                    }
-
-                    button:nth-child(1) {
-                        border: 1px solid #E5E5E5;
-
-                        &:hover {
-                            background-color: #E5E5E5;
-                        }
-                    }
-
-                    button:nth-child(2) {
-                        background-color: #527BCB;
-                        color: white;
-
-                        &:hover {
-                        background-color: #476bb3;
-                        }
-                    }
                 }
 
                 form {
@@ -140,16 +83,15 @@ export default {
                         cursor: pointer;
                         height: 64px;
                         border-radius: 10px;
-                        border: none;
-                        background-color: #26ce83;
-                        color: white;
+                        border: 1px solid #26ce83;
+                        background-color: transparent;
+                        color: #26ce83;
                         font-size: 18px;
                         transition: all 0.3s ease-in-out;
 
                         &:hover {
-                            border: 1px solid #26ce83;
-                            background-color: white;
-                            color: #26ce83;
+                            background-color: #26ce83;
+                            color: white;
                         }
                     }
                 }

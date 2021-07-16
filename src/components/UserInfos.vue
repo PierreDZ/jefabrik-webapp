@@ -1,6 +1,9 @@
 <template>
   <div id="user-infos">
-    <img src="../assets/logo moby-geek.png" alt="" srcset="">
+    <div class="notification-img">
+      <img src="../assets/logo moby-geek.png" alt="" srcset="">
+      <span class="badge"></span>
+    </div>
     <p>{{ app_name }}</p>
     <p>Host : {{ host_name }}</p>
     <button>Maintenance</button>
@@ -14,7 +17,8 @@ export default {
   data () {
     return {
       app_name: 'Moby-geek',
-      host_name: 'AWS'
+      host_name: 'AWS',
+      problem: false
     }
   }
 }
@@ -23,12 +27,25 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   #user-infos {
+    height: 377px;
     display: flex;
     align-items: center;
     flex-direction: column;
 
     img {
-      width: 25%;
+      margin-bottom: 20px;
+    }
+
+    span {
+      position: absolute;
+      height: 15px;
+      width: 15px;
+      border-radius: 50%;
+      background-color: #26ce83;
+    }
+
+    p {
+      margin-bottom: 20px;
     }
 
     button {
@@ -40,6 +57,7 @@ export default {
       border: 2px solid #767676;
       border-radius: 10px;
       cursor: pointer;
+      transition: all 0.3s ease-in-out;
 
       &:nth-child(4) {
         margin-bottom: 40px;

@@ -45,6 +45,7 @@ export default {
   display: flex;
   flex-direction: column;
   height: 377px;
+  grid-column: 1/2;
 
   #dashboard {
     height: 100%;
@@ -53,6 +54,7 @@ export default {
   a {
     font-size: 48px;
     color: #767676;
+    transition: all 0.3s ease-in-out;
 
     &.router-link-exact-active {
       color: #26ce83;

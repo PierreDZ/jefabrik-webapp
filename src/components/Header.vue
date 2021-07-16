@@ -20,6 +20,7 @@ export default {
 <style scoped lang="scss">
   #header {
     width: 100%;
+    height: inherit;
     max-width: 932px;
 
     h1 {
@@ -32,6 +33,7 @@ export default {
       display: flex;
       width: 100%;
       justify-content: space-between;
+      align-items: center;
 
       .status {
         position: relative;
@@ -48,7 +50,8 @@ export default {
       }
 
       button {
-        padding: 0 40px;
+        height: 50px;
+        width: 240px;
         border: none;
         font-size: 18px;
         font-weight: 500;
@@ -56,6 +59,7 @@ export default {
         background-color: rgba(38, 206, 131, 1);
         border-radius: 10px;
         cursor: pointer;
+        transition: all 0.3s ease-in-out;
 
         &:hover {
         background-color: rgba(38, 206, 131, 0.8);
