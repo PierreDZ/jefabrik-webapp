@@ -1,30 +1,25 @@
-# jefabrik-analytics
+### Hi there, I'm Pierre Dhont--Zeimert 👋
 
-## Project description
-```
-Creating a Web Application for Jefabrik clients to check their Configurator and follow it's activity and changes
-```
+[![Website](https://img.shields.io/website?label=codeSTACKr.com&style=for-the-badge&url=https%3A%2F%2Fcodestackr.com)](https://codestackr.com)
+[![Twitter Follow](https://img.shields.io/twitter/follow/codeSTACKr?color=1DA1F2&logo=twitter&style=for-the-badge)](https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fgithub.com%2FcodeSTACKr&screen_name=codeSTACKr)
 
+## I'm a Developer working for Jefabrik and Moby-geek
 
-## Project setup
-```
-npm install
-```
+- 🌱 I’m currently learning everything 🤣
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Connect with us:
 
-### Compiles and minifies for production
-```
-npm run build
-```
+[<img align="left" alt="https://www.moby-geek.com/" width="22px" src="https://www.moby-geek.com/" />][website]
+[<img align="left" alt="codeSTACKr | YouTube" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/youtube.svg" />][youtube]
+[<img align="left" alt="codeSTACKr | Twitter" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/twitter.svg" />][twitter]
+[<img align="left" alt="codeSTACKr | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin]
+[<img align="left" alt="codeSTACKr | Instagram" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/instagram.svg" />][instagram]
 
-### Lints and fixes files
-```
-npm run lint
-```
+<br />
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Languages used in this project:
+
+[<img align="left" alt="Visual Studio Code" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/visual-studio-code/visual-studio-code.png" />][webdevplaylist]
+
+<br />
+<br />
