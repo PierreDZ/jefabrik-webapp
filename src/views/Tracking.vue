@@ -2,6 +2,11 @@
   <div class="tracking-infos">
     <Navigation />
     <Header :title="title" />
+    <div class="tracking-content">
+      <PlanetChart />
+      <PlanetChart2 />
+      <PlanetChart3 />
+    </div>
     <UserInfos />
   </div>
 </template>
@@ -10,13 +15,19 @@
 import Header from '@/components/Header.vue';
 import Navigation from '@/components/Navigation.vue';
 import UserInfos from '@/components/UserInfos.vue';
+import PlanetChart from "@/components/PlanetChart.vue";
+import PlanetChart2 from "@/components/PlanetChart2.vue";
+import PlanetChart3 from "@/components/PlanetChart3.vue";
 
 export default {
   name: 'Tracking',
   components: {
     Header,
     Navigation,
-    UserInfos
+    UserInfos,
+    PlanetChart,
+    PlanetChart2,
+    PlanetChart3
   },
   data () {
     return {
@@ -33,7 +44,7 @@ export default {
     padding-top: 50px;
     display: grid;
     grid-template-columns: 1fr 6fr 2fr;
-    grid-template-rows: 1fr 3fr;
+    grid-template-rows: 1fr 4fr;
 
     #nav {
       grid-column: 1/2;
@@ -48,6 +59,12 @@ export default {
     #user-infos {
       grid-column: 3/4;
       grid-row: 1/4;
+    }
+
+    .tracking-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 200px 150px;
     }
   }
 </style>

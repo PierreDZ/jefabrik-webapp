@@ -1,4 +1,4 @@
-# jefabrik-analitycs-app
+# jefabrik-analytics
 
 ## Project description
 ```

@@ -6,6 +6,8 @@ import store from './store'
 
 Vue.config.productionTip = false
 
+// Vue.use(Chartkick.use(Chart));
+
 new Vue({
   router,
   Vuex,
