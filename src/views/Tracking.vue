@@ -64,7 +64,14 @@ export default {
     .tracking-content {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 200px 150px;
+      grid-template-rows: auto auto;
+
+      @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+      } 
     }
   }
 </style>

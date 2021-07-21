@@ -64,6 +64,6 @@ export default {
   }
 
   #planet-chart3 {
-    height: 200px;
+    height: 192px;
   }
 </style>
