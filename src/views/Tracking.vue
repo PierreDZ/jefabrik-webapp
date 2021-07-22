@@ -33,6 +33,18 @@ export default {
     return {
       title: 'Tracking Infos'
     }
+  },
+  mounted: function () {
+    console.log(this.$gapi);
+    this.$gapi.request({
+  path: 'https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses',
+  method: 'GET',
+  params: {
+    personFields: 'names,emailAddresses'
+  }
+}).then(response => {
+  console.log(response)
+})
   }
 }
 </script>
