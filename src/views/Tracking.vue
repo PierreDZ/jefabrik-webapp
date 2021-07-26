@@ -6,6 +6,8 @@
       <PlanetChart />
       <PlanetChart2 />
       <PlanetChart3 />
+      <div class="info">{{ info }}</div>
+      <div class="error">{{ error }}</div>
     </div>
     <UserInfos />
   </div>
@@ -31,20 +33,16 @@ export default {
   },
   data () {
     return {
-      title: 'Tracking Infos'
+      title: 'Tracking Infos',
+      info: null,
+      error: null
     }
   },
-  mounted: function () {
-    console.log(this.$gapi);
+  mounted () {
     this.$gapi.request({
-  path: 'https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses',
-  method: 'GET',
-  params: {
-    personFields: 'names,emailAddresses'
-  }
-}).then(response => {
-  console.log(response)
-})
+      path: 'https://analyticsdata.googleapis.com/v1beta/',
+      method: 'GET'
+    })
   }
 }
 </script>
