@@ -6,20 +6,27 @@
       <PlanetChart />
       <PlanetChart2 />
       <PlanetChart3 />
-      <div class="info">{{ info }}</div>
-      <div class="error">{{ error }}</div>
+      <div class="info" v-for="post in posts" :key="post.id">
+        <h2>
+          {{ post.userId }}
+        </h2>
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.body }}</p>
+      </div>
+      <p class="error">{{ errors }}</p>
     </div>
     <UserInfos />
   </div>
 </template>
 
 <script>
-import Header from '@/components/Header.vue';
-import Navigation from '@/components/Navigation.vue';
-import UserInfos from '@/components/UserInfos.vue';
+import Header from "@/components/Header.vue";
+import Navigation from "@/components/Navigation.vue";
+import UserInfos from "@/components/UserInfos.vue";
 import PlanetChart from "@/components/PlanetChart.vue";
 import PlanetChart2 from "@/components/PlanetChart2.vue";
 import PlanetChart3 from "@/components/PlanetChart3.vue";
+import runReport from "../modules/google_api"
 
 export default {
   name: 'Tracking',
@@ -34,17 +41,14 @@ export default {
   data () {
     return {
       title: 'Tracking Infos',
-      info: null,
-      error: null
+      posts: null,
+      errors: []
     }
   },
   mounted () {
-    this.$gapi.request({
-      path: 'https://analyticsdata.googleapis.com/v1beta/',
-      method: 'GET'
-    })
+      runReport();
+    }
   }
-}
 </script>
 
 <style scoped lang="scss">
