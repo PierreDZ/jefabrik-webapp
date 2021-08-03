@@ -26,7 +26,7 @@ import UserInfos from "@/components/UserInfos.vue";
 import PlanetChart from "@/components/PlanetChart.vue";
 import PlanetChart2 from "@/components/PlanetChart2.vue";
 import PlanetChart3 from "@/components/PlanetChart3.vue";
-import runReport from "../modules/google_api"
+import getAnalyticsData from "../modules/google_api"
 
 export default {
   name: 'Tracking',
@@ -46,8 +46,15 @@ export default {
     }
   },
   mounted () {
-      runReport();
+    this.getAnalyticsData();
+    },
+  methods: {
+    getAnalyticsData(){
+      getAnalyticsData().then(res => {
+        console.log('response in my webpage',res);
+      })
     }
+  }
   }
 </script>
 
