@@ -17,11 +17,6 @@ const analyticsDataClient = new BetaAnalyticsDataClient();
 
 // Runs a simple report.
 module.exports.runReport = async () => {
-  console.log(
-    "GOOGLE_APPLICATION_CREDENTIALS",
-    process.env.GOOGLE_APPLICATION_CREDENTIALS
-  );
-
   const [response] = await analyticsDataClient.runReport({
     property: `properties/${propertyId}`,
     dateRanges: [
@@ -42,9 +37,9 @@ module.exports.runReport = async () => {
     ],
   });
 
-  console.log("Report result:");
-  response.rows.forEach((row) => {
-    console.log(row.dimensionValues[0], row.metricValues[0]);
-  });
+  // console.log("Report result:");
+  // response.rows.forEach((row) => {
+  //   console.log(row.dimensionValues[0], row.metricValues[0]);
+  // });
   return response;
 };

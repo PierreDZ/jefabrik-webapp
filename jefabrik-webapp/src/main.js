@@ -5,7 +5,12 @@ import Vuex from './store'
 import store from './store'
 import axios from 'axios'
 
-Vue.prototype.$http = axios;
+const instance = axios.create({
+  baseURL: "http://localhost:3000",
+  withCredentials: false,
+});
+
+Vue.prototype.$http = instance;
 
 Vue.config.productionTip = false
 
