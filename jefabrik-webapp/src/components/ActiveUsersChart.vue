@@ -3,15 +3,15 @@ import { Line } from 'vue-chartjs'
 
 export default {
   extends: Line,
-  props: ['labelsCtry', 'dataLabelCtry', 'dataDatasCtry'],
+  props: ['labels', 'dataLabel', 'dataDatas'],
   data () {
     return {
       chartdata: {
-        labels: this.labelsCtry,
+        labels: this.labels,
         datasets: [
           {
-            label: this.dataLabelCtry,
-            data: this.dataDatasCtry,
+            label: this.dataLabel,
+            data: this.dataDatas,
             backgroundColor: "#26ce83",
             borderColor: "#47b784",
             borderWidth: 3

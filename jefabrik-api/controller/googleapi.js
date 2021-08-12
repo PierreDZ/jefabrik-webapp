@@ -19,22 +19,25 @@ const analyticsDataClient = new BetaAnalyticsDataClient();
 module.exports.runReport = async () => {
   const [response] = await analyticsDataClient.runReport({
     property: `properties/${propertyId}`,
-    dateRanges: [
-      {
-        startDate: "2021-01-31",
-        endDate: "today",
-      },
-    ],
-    dimensions: [
-      {
-        name: "city",
-      },
-    ],
-    metrics: [
-      {
-        name: "activeUsers",
-      },
-    ],
+    dateRanges: [{ startDate: "28daysAgo", endDate: "today" }],
+    dimensions: [{ name: "date" }],
+    metrics:    [{ name: "activeUsers" }],
+  });
+
+  // console.log("Report result:");
+  // response.rows.forEach((row) => {
+  //   console.log(row.dimensionValues[0], row.metricValues[0]);
+  // });
+  return response;
+};
+
+// Runs a simple report.
+module.exports.runReport2 = async () => {
+  const [response] = await analyticsDataClient.runReport({
+    property: `properties/${propertyId}`,
+    dateRanges: [{ startDate: "28daysAgo", endDate: "today" }],
+    dimensions: [{ name: "country" }],
+    metrics:    [{ name: "activeUsers" }],
   });
 
   // console.log("Report result:");

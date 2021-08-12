@@ -3,17 +3,20 @@
     <Navigation />
     <Header :title="title" />
     <div class="tracking-content">
-      <PlanetChart />
-      <PlanetChart2 />
-      <PlanetChart3 />
-      <div class="info" v-for="post in posts" :key="post.id">
-        <h2>
-          {{ post.userId }}
-        </h2>
-        <h3>{{ post.title }}</h3>
-        <p>{{ post.body }}</p>
+      <div class="container">
+        <LineChart
+          v-if="loaded"
+          :labels="labels"
+          :dataLabel="dataLabel"
+          :dataDatas="dataDatas"
+        />
       </div>
-      <p class="error">{{ errors }}</p>
+      <LineChart2 
+        v-if="loaded"
+          :labelsCtry="labelsCtry"
+          :dataLabelCtry="dataLabelCtry"
+          :dataDatasCtry="dataDatasCtry"
+      />
     </div>
     <UserInfos />
   </div>
@@ -23,10 +26,10 @@
 import Header from "@/components/Header.vue";
 import Navigation from "@/components/Navigation.vue";
 import UserInfos from "@/components/UserInfos.vue";
-import PlanetChart from "@/components/PlanetChart.vue";
-import PlanetChart2 from "@/components/PlanetChart2.vue";
-import PlanetChart3 from "@/components/PlanetChart3.vue";
+import LineChart from "@/components/ActiveUsersChart.vue";
+import LineChart2 from "@/components/PlanetChart2.vue";
 import getAnalyticsData from "../modules/google_api"
+import getAnalyticsDataCountries from '../modules/google_api_countries'
 
 export default {
   name: 'Tracking',
@@ -34,27 +37,64 @@ export default {
     Header,
     Navigation,
     UserInfos,
-    PlanetChart,
-    PlanetChart2,
-    PlanetChart3
+    LineChart,
+    LineChart2,
   },
   data () {
     return {
       title: 'Tracking Infos',
-      posts: null,
-      errors: []
+      loaded: false,
+      labels: [],
+      labelsCtry: [],
+      dataLabel: '',
+      dataLabelCtry: '',
+      countryLabel: '',
+      dataDatas: [],
+      dataDatasCtry: [],
+      userlist: null,
+      userlistCtry: null,
     }
   },
-  mounted () {
-    this.getAnalyticsData();
-    },
-  methods: {
-    getAnalyticsData(){
-      getAnalyticsData().then(res => {
-        console.log('response in my webpage',res);
+  async mounted () {
+    this.loaded = false;
+    try {
+
+      await getAnalyticsData().then(res => {
+        // console.log('response in my webpage',res.data);
+        this.userlist = res.data.rows;
+        this.dataLabel = res.data.metricHeaders[0].name;
+        this.userlist.forEach(elem => {
+          this.labels.push(this.formatDate(elem.dimensionValues[0].value));
+          this.dataDatas.push(elem.metricValues[0].value);
+        });
+        this.loaded = true;
       })
+    } catch (e) {
+      console.error(e)
     }
-  }
+    try {
+        await getAnalyticsDataCountries().then(res => {
+          // console.log('response in my webpage', res.data);
+          this.userlistCtry = res.data.rows;
+          this.countryLabel = res.data.dimensionHeaders[0].name
+          this.dataLabelCtry = res.data.metricHeaders[0].name
+          this.userlistCtry.forEach(elem => {
+            this.labelsCtry.push(elem.dimensionValues[0].value)
+            this.dataDatasCtry.push(elem.metricValues[0].value);
+        })
+        this.loaded = true;
+      })
+    } catch (e) {
+      console.error(e)
+    }
+  },
+  methods: {
+      formatDate (dateString) {
+          let day = dateString.substr(6, 2);
+          let month = dateString.substr(4, 2);
+          return day + '-' + month
+      }
+    }
   }
 </script>
 

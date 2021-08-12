@@ -4,7 +4,7 @@
       <img src="../assets/logo moby-geek.png" alt="" srcset="">
       <span class="badge"></span>
     </div>
-    <p>{{ app_name }}</p>
+    <p>{{ user_name }}</p>
     <p>Host : {{ host_name }}</p>
     <button>Maintenance</button>
     <button>Need help ?</button>
@@ -16,7 +16,7 @@ export default {
   name: 'UserInfos',
   data () {
     return {
-      app_name: 'Moby-geek',
+      user_name: 'Moby-geek',
       host_name: 'AWS',
       problem: false
     }

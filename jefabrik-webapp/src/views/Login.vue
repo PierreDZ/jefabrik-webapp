@@ -43,7 +43,9 @@ export default {
 
     .log {
         width: 80%;
+        height: 80%;
         justify-self: center;
+        align-self: center;
         text-align: left;
 
         .inner-log {
