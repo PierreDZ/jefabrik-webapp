@@ -17,6 +17,9 @@
           :dataLabelCtry="dataLabelCtry"
           :dataDatasCtry="dataDatasCtry"
       />
+      <div class="error" v-if="error">
+        <p>Si les graphiques ne se chargent pas, veulliez contacter jefabrik à l'adresse suivante : <a href="mailto:Contact@moby-geek.com">contact@jefabrik.com</a></p>
+      </div>
     </div>
     <UserInfos />
   </div>
@@ -43,7 +46,8 @@ export default {
   data () {
     return {
       title: 'Tracking Infos',
-      loaded: false,
+      loaded: null,
+      error: null,
       labels: [],
       labelsCtry: [],
       dataLabel: '',
@@ -57,6 +61,7 @@ export default {
   },
   async mounted () {
     this.loaded = false;
+    this.error = false
     try {
 
       await getAnalyticsData().then(res => {
@@ -68,9 +73,11 @@ export default {
           this.dataDatas.push(elem.metricValues[0].value);
         });
         this.loaded = true;
+        this.error = false;
       })
     } catch (e) {
       console.error(e)
+      this.error = true
     }
     try {
         await getAnalyticsDataCountries().then(res => {
@@ -83,9 +90,11 @@ export default {
             this.dataDatasCtry.push(elem.metricValues[0].value);
         })
         this.loaded = true;
+        this.error = false
       })
     } catch (e) {
       console.error(e)
+      this.error = true;
     }
   },
   methods: {
@@ -126,6 +135,7 @@ export default {
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto auto;
+      gap: 1.5rem;
 
       @media (max-width: 768px) {
         display: flex;
@@ -133,6 +143,12 @@ export default {
         align-items: center;
         margin-top: 50px;
       } 
+
+      .error {
+        grid-row: 1/2;
+        grid-column: 1/3;
+        align-self: center;
+      }
     }
   }
 </style>
