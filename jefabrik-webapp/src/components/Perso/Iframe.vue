@@ -1,5 +1,5 @@
 <template>
-    <div id="general">
+    <div id="iframe">
         <iframe 
             id="v3d_iframe" 
             class="v3d-iframe" 
