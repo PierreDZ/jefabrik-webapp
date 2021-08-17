@@ -1,7 +1,7 @@
 <template>
   <div id="user-infos">
     <div class="notification-img">
-      <img src="../assets/logo moby-geek.png" alt="" srcset="">
+      <img src="../assets/images/logo moby-geek.png" alt="" srcset="">
       <span class="badge"></span>
     </div>
     <p>{{ user_name }}</p>

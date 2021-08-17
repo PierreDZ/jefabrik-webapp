@@ -2,16 +2,20 @@
   <div class="personalization">
     <Navigation />
     <Header :title="title" />
+    <UserInfos />
     <div class="perso-content">
       <ul class="c-btns">
-        <li v-for="btn in btns" :key="btn.id">
-          <button @click="logV" :value="btn.id">{{ btn.name }}</button>
+        <li v-for="(btn, index) in btns" :key="index">
+          <button :value="btn.name">
+            button
+          </button>
         </li>
       </ul>
-          <General/>
-          <Formes/>
+      <General />
+      <button class="save-changes">Save Changes</button>
+      <Iframe/>
+      <p>Last update the {{ updateDate.getDate() }}/{{ updateDate.getMonth() }}/{{ updateDate.getFullYear() }} at {{ updateDate.getHours() }}h{{ getMinutes + updateDate.getMinutes() }} </p>
     </div>
-    <UserInfos />
   </div>
 </template>
 
@@ -19,8 +23,8 @@
 import Header from '@/components/Header.vue';
 import Navigation from '@/components/Navigation.vue';
 import UserInfos from '@/components/UserInfos.vue';
+import Iframe from '@/components/Perso/Iframe.vue';
 import General from '@/components/Perso/General.vue';
-import Formes from '@/components/Perso/Formes.vue';
 
 export default {
   name: 'Personalization',
@@ -28,8 +32,8 @@ export default {
     Header,
     Navigation,
     UserInfos,
-    General,
-    Formes
+    Iframe,
+    General
   },
   data () {
     return {
@@ -38,12 +42,18 @@ export default {
         {id: 1, name: 'General'},
         {id: 2, name: 'Formes'},
         {id: 3, name: 'Matériaux'},
-      ]
+        {id: 4, name: 'Dimensions'},
+        {id: 5, name: 'Piètements'},
+        {id: 6, name: 'Passe Câbles'},
+        {id: 7, name: 'Goulotte'},
+        {id: 8, name: 'Support Ecrans'}
+      ],
+      updateDate: new Date
     }
   },
-  methods: {
-    logV () {
-      
+  computed: {
+    getMinutes: function () {
+      return this.updateDate.getMinutes() < 10 ? '0' : '';
     }
   }
 }
@@ -76,18 +86,57 @@ export default {
       .perso-content {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-rows: 3fr 1fr;
+        gap: 1.5rem;
 
         .c-btns {
           grid-column: 1/2;
+          grid-row: 1/2;
           display: flex;
           justify-content: space-around;
           list-style: none;
         }
 
-        #general {
+        #iframe {
           grid-column: 2/3;
-          grid-row: 1/3;
+          grid-row: 1/2;
+        }
+
+        #general-perso {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          height: 100%;
+          grid-column: 1/2;
+          grid-row: 1/2;
+        }
+
+        .save-changes {
+              grid-column: 1/2;
+              grid-row: 1/2;
+              align-self: flex-end;
+              justify-self: center;
+              cursor: pointer;
+              height: 54px;
+              width: 80%;
+              border-radius: 10px;
+              border: 1px solid #26ce83;
+              background-color: transparent;
+              color: #26ce83;
+              font-size: 16px;
+              transition: all 0.3s ease-in-out;
+
+              &:hover {
+                   background-color: #26ce83;
+                  color: white;
+              }
+          }
+
+        p {
+          grid-column: 1/3;
+          grid-row: 2/3;
+          align-self: center;
+          justify-self: right;
         }
       }
   }

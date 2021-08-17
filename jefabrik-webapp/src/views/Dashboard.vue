@@ -13,6 +13,7 @@
         data-hj-allow-iframe
         >
 				</iframe>
+        <p>Last connexion on {{ connectionDate.getDate() }}/{{ connectionDate.getMonth() }}/{{ connectionDate.getFullYear() }} at {{ connectionDate.getHours() }}h{{ getMinutes + connectionDate.getMinutes() }}</p>
       </div>
   </div>
 </template>
@@ -32,7 +33,13 @@ export default {
   },
   data () {
     return {
-      title: 'Dashboard'
+      title: 'Dashboard',
+      connectionDate: new Date,
+    }
+  },
+  computed: {
+    getMinutes: function () {
+      return this.connectionDate.getMinutes() < 10 ? '0' : '';
     }
   }
 }
@@ -70,6 +77,11 @@ export default {
     img {
       width: 100%;
       margin-top: 30px;
+    }
+
+    p {
+      text-align: right;
+      margin-top: 20px;
     }
   }
 
