@@ -2,12 +2,12 @@
     <div id="general-perso">
         <ul class="c-btns">
             <li v-for="(btn, index) in btns" :key="index">
-                <button class="c-btn" :value="btn.name">
-                    <IconifyIcon class="btn-icon" :icon="btn.icon" />
+                <button class="c-btn" :value="btn.name" @click="changeInputs(btn.action)">
+                    <InlineSvg :src="btn.icon"/>
                 </button>
             </li>
         </ul>
-        <div class="input-container">
+        <div class="general-container" v-show="activeBtn === 'general'">
             <div class="background-color">
                 <label for="background-color">Background colors: </label>
                 <div class="colors">
@@ -49,30 +49,73 @@
                 </div>
             </div>
         </div>
+        <div class="forme-container" v-show="activeBtn === 'formes'">
+            <div class="img img_1">
+                <div class="img_wrapper">
+                    <img src="../../assets/images/empty_image.png" alt="">
+                </div>
+                <input type="file" placeholder="Upload image 1">
+                <input type="text" placeholder="Enter price">
+            </div>
+            <div class="buttons-color">
+                <label for="background-color">Buttons colors: </label>
+                <div class="colors">
+                    <input type="color" name="darkblue" id="darkblue" value="#30336b">
+                    <input type="color" name="lightgreen" id="lightgreen" value="#55efc4">
+                    <input type="color" name="orange" id="orange" value="#e17055">
+                    <input type="color" name="corail" id="corail" value="#d63031">
+                    <input type="color" name="blue" id="blue" value="#0984e3">
+                </div>
+            </div>
+            <div class="footer-color">
+                <label for="background-color">Footer colors: </label>
+                <div class="colors">
+                    <input type="color" name="darkblue" id="darkblue" value="#30336b">
+                    <input type="color" name="lightgreen" id="lightgreen" value="#55efc4">
+                    <input type="color" name="orange" id="orange" value="#e17055">
+                    <input type="color" name="corail" id="corail" value="#d63031">
+                    <input type="color" name="blue" id="blue" value="#0984e3">
+                </div>
+            </div>
+            <div class="selected-color">
+                <label for="background-color">Selected colors: </label>
+                <div class="colors">
+                    <input type="color" name="darkblue" id="darkblue" value="#30336b">
+                    <input type="color" name="lightgreen" id="lightgreen" value="#55efc4">
+                    <input type="color" name="orange" id="orange" value="#e17055">
+                    <input type="color" name="corail" id="corail" value="#d63031">
+                    <input type="color" name="blue" id="blue" value="#0984e3">
+                </div>
+            </div>
+        </div>
         <button class="save-changes">Save Changes</button>
     </div>
 </template>
 
 <script>
-import IconifyIcon from '@iconify/vue';
-import settingsIcon from '@iconify-icons/ci/settings';
-
+import InlineSvg from 'vue-inline-svg';
 export default {
     components: {
-        IconifyIcon
+        InlineSvg
     },
     data () {
         return {
             btns: [
-                {id: 1, name: 'General', icon: settingsIcon},
-                {id: 2, name: 'Formes'},
-                {id: 3, name: 'Matériaux'},
-                {id: 4, name: 'Dimensions'},
-                {id: 5, name: 'Piètements'},
-                {id: 6, name: 'Passe Câbles'},
-                {id: 7, name: 'Goulotte'},
-                {id: 8, name: 'Support Ecrans'}
-            ]
+                {id: 1, name: 'General', icon: require('../../assets/images/mobygeek_settings.svg'), action: 'general'},
+                {id: 2, name: 'Formes', icon: require('../../assets/images/mobygeek_forme.svg'), action: 'formes'},
+                {id: 3, name: 'Matériaux', icon: require('../../assets/images/mobygeek_mat.svg')},
+                {id: 4, name: 'Dimensions', icon: require('../../assets/images/mobygeek_dim.svg')},
+                {id: 5, name: 'Piètements', icon: require('../../assets/images/mobygeek_piet.svg')},
+                {id: 6, name: 'Passe Câbles', icon: require('../../assets/images/mobygeek_pass.svg')},
+                {id: 7, name: 'Goulotte', icon: require('../../assets/images/mobygeek_goulotte.svg')},
+                {id: 8, name: 'Support Ecrans', icon: require('../../assets/images/mobygeek_support.svg')}
+            ],
+            activeBtn: 'general',
+        }
+    },
+    methods: {
+        changeInputs (elem) {
+            this.activeBtn = elem;
         }
     }
 }
@@ -104,17 +147,17 @@ export default {
         .c-btn {
             display: flex;
             cursor: pointer;
-            height: 28px;
-            width: 28px;
+            height: 40px;
+            width: 40px;
             border: 1px solid #767676;
             border-radius: 5px;
             background-color: transparent;
             align-items: center;
             justify-content: center;
+            transition: .3s;
 
-            .btn-icon {
-                height: 20px;
-                width: 20px;
+            &:hover, &:focus {
+                border-color: #26ce83;
                 color: #767676;
             }
         }

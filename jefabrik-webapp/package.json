@@ -14,11 +14,15 @@
     "core-js": "^3.6.5",
     "vue": "^2.6.11",
     "vue-chartjs": "^3.5.1",
+    "vue-inline-svg": "^2.0.0",
     "vue-router": "^3.2.0",
     "vuex": "^3.6.2"
   },
   "devDependencies": {
+    "@iconify-icons/carbon": "^1.1.5",
     "@iconify-icons/ci": "^1.1.0",
+    "@iconify-icons/fluent": "^1.1.24",
+    "@iconify-icons/ri": "^1.1.0",
     "@iconify/icons-bi": "^1.1.5",
     "@iconify/icons-bx": "^1.1.0",
     "@iconify/icons-eos-icons": "^1.1.0",

@@ -15,8 +15,8 @@
 import Header from '@/components/Header.vue';
 import Navigation from '@/components/Navigation.vue';
 import UserInfos from '@/components/UserInfos.vue';
-import Iframe from '@/components/Perso/Iframe.vue';
-import General from '@/components/Perso/General.vue';
+import Iframe from '@/components/Personalization/Iframe.vue';
+import General from '@/components/Personalization/mobygeek.vue';
 
 export default {
   name: 'Personalization',
