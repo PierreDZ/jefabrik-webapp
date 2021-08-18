@@ -4,10 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var googleApiRouter = require('./routes/googleapi');
-var googleApiCountries = require('./routes/googleapicountries');
+var indexRouter = require('./api/routes/index');
+var usersRouter = require('./api/routes/users');
+var googleApiRouter = require('./api/routes/googleapi');
+var clientRouter = require('./api/routes/client');
 
 var app = express();
 
@@ -38,7 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/googleapi', googleApiRouter);
-app.use('/googleapi', googleApiCountries);
+app.use('/client', clientRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
