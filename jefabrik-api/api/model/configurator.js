@@ -14,5 +14,5 @@ const ConfiguratorSchema = new mongoose.Schema(
 	{ timestamps: true }
 );
 
-const Configurator = mongoose.module('Client',ConfiguratorSchema);
+const Configurator = mongoose.model('Client',ConfiguratorSchema);
 module.exports = Configurator;
