@@ -1,14 +1,14 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var indexRouter = require('./api/routes/index');
-var usersRouter = require('./api/routes/users');
-var googleApiRouter = require('./api/routes/googleapi');
-var clientRouter = require('./api/routes/clients');
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const indexRouter = require('./api/routes/index');
+const usersRouter = require('./api/routes/users');
+const googleApiRouter = require('./api/routes/googleapi');
+const clientRouter = require('./api/routes/clients');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 require('dotenv');
 
 mongoose.connect(process.env.MONGODB_CONNECTION, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -19,7 +19,7 @@ db.once('open', function() {
   console.log('Connected to MongoDB');
 });
 
-var app = express();
+const app = express();
 
 app.use(function (req, res, next) {
   // Website you wish to allow to connect

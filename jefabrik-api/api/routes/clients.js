@@ -1,5 +1,6 @@
 var express = require('express');
 const ClientController = require('../controller/client');
+const Client = require("../model/client");
 var router = express.Router();
 
 /* GET clients listing. */
@@ -35,14 +36,15 @@ router.post('/', async (req, res) => {
 
 /* UPDATE client by ID. */
 router.patch('/:id', async (req, res) => {
-    try {
-        const idClient = req.params.id.toString();
-        const response = await ClientController.updateClientById(idClient);
-        res.status(response.code).send(response.data);
-    } catch (error) {
+    const response = await Client.findByIdAndUpdate(req.params.id, req.body, {new: true, useFindAndModify: false}).then((blog) => {
+        if (!response) {
+            return res.status(404).send();
+        }
+        res.send(response);
+    }).catch((error) => {
         res.status(500).send(error);
-    }
-  });
+    })
+})
 
 /* DELETE client by ID. */
 router.delete('/:id', async (req, res) => {

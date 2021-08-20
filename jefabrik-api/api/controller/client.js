@@ -5,6 +5,7 @@ module.exports.createClient = async (req, res) => {
     const newClient = await new Client({
       name: req.body.name,
       email: req.body.email,
+      phoneNumber: req.body.phoneNumber,
       password: req.body.password,
       profile_img: req.body.profile_img,
     });
@@ -51,34 +52,6 @@ module.exports.getClientById = async (id) => {
     return {
       code: 200,
       data: clientFound,
-    };
-  } catch (error) {
-    return {
-      code: 500,
-      data: {
-        error: "Problem retrieving data",
-      },
-    };
-  }
-};
-
-module.exports.updateClientById = async (idClient, req) => {
-  try {
-    let name = "Moby-Geek 3";
-    const client = await Client.updateOne(
-      { _id: idClient },
-      {
-        $set: {
-          name: name
-        },
-      }
-    );
-
-    if (!client) return { code: 404, data: { error: "No client found" } };
-
-    return {
-      code: 200,
-      data: updatedClient,
     };
   } catch (error) {
     return {

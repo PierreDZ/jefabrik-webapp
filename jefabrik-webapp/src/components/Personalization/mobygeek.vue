@@ -1,5 +1,5 @@
 <template>
-  <div id="general-perso">
+  <div id="general-perso" :key="componentKey">
     <ul class="c-btns">
       <li v-for="(btn, index) in btns" :key="index">
         <button class="c-btn" :value="btn.name" @click="changeInputs(btn.name)">
@@ -137,9 +137,21 @@
       </div>
     </div>
     <div class="dimensions-container" v-show="activeBtn === 'Dimensions'">
-      <input type="text" placeholder="Choose Longueur min en mm" v-model="datas.$set.name"/>
-      <input type="text" placeholder="Choose Longueur max en mm" />
-      <input type="text" placeholder="Choose Largeur min en mm" />
+      <input
+        type="text"
+        placeholder="Choose Longueur min en mm"
+        v-model="datas.name"
+      />
+      <input
+        type="text"
+        placeholder="Choose Longueur max en mm"
+        v-model="datas.email"
+      />
+      <input
+        type="text"
+        placeholder="Choose Largeur min en mm"
+        v-model="datas.password"
+      />
       <input type="text" placeholder="Choose Largeur max en mm" />
     </div>
     <div class="piet-container" v-show="activeBtn === 'Piètements'">
@@ -407,13 +419,13 @@
         </div>
       </div>
     </div>
-    <button class="save-changes" @click="updateName">Save Changes</button>
+    <button class="save-changes" @click="updateConfigDB">Save Changes</button>
   </div>
 </template>
 
 <script>
 import InlineSvg from "vue-inline-svg";
-import { updateClientById, getClientById } from "../../modules/clients"
+import { updateClientById, getClientById } from "../../modules/clients";
 export default {
   components: {
     InlineSvg,
@@ -463,29 +475,31 @@ export default {
         },
       ],
       activeBtn: "General",
-      idClient: "611f78229a3d86c9dab15d8b",
+      idClient: "611ff240e25634c357a298e7",
+      componentKey: 0,
       datas: {
-        $set: {
-          name: ""
-        }
-      }
+        name: "",
+        email: "",
+        password: "",
+      },
     };
   },
-  mounted () {
-      getClientById(this.idClient)
-        .then(res => {
-          this.datas.$set.name = res.data.name
-        });
-    
+  mounted() {
+    getClientById(this.idClient).then((res) => {
+      this.datas.name = res.data.name;
+      this.datas.email = res.data.email;
+      this.datas.password = res.data.password;
+    });
   },
   methods: {
     changeInputs(elem) {
       this.activeBtn = elem;
     },
-    updateName () {
-      updateClientById(this.idClient, this.datas).then(res => console.log(res));
-      console.log(this.datas);
-    }
+    updateConfigDB() {
+      updateClientById(this.idClient, this.datas);
+      this.componentKey += 1;
+      this.activeBtn = "General";
+    },
   },
 };
 </script>
