@@ -62,9 +62,37 @@ module.exports.getClientById = async (id) => {
   }
 };
 
+module.exports.updateClientById = async (idClient, req) => {
+  try {
+    let name = "Moby-Geek 3";
+    const client = await Client.updateOne(
+      { _id: idClient },
+      {
+        $set: {
+          name: name
+        },
+      }
+    );
+
+    if (!client) return { code: 404, data: { error: "No client found" } };
+
+    return {
+      code: 200,
+      data: updatedClient,
+    };
+  } catch (error) {
+    return {
+      code: 500,
+      data: {
+        error: "Problem retrieving data",
+      },
+    };
+  }
+};
+
 module.exports.deleteClientById = async (id) => {
   try {
-    const clientFound = await Client.findOneAndDelete(id, { useFindAndModify: true });
+    const clientFound = await Client.findByIdAndDelete(id);
     if (!clientFound) return { code: 404, data: { error: "No client found" } };
 
     return {

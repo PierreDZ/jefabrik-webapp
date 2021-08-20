@@ -6,7 +6,7 @@ var logger = require('morgan');
 var indexRouter = require('./api/routes/index');
 var usersRouter = require('./api/routes/users');
 var googleApiRouter = require('./api/routes/googleapi');
-var clientRouter = require('./api/routes/client');
+var clientRouter = require('./api/routes/clients');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 require('dotenv');
@@ -49,7 +49,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/googleapi', googleApiRouter);
-app.use('/client', clientRouter);
+app.use('/clients', clientRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

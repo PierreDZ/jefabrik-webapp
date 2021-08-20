@@ -2,7 +2,7 @@ var express = require('express');
 const ClientController = require('../controller/client');
 var router = express.Router();
 
-/* GET users listing. */
+/* GET clients listing. */
 router.get('/', async (req, res) => {
     try{
         const response = await ClientController.getAllClients();
@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-/* GET user by ID. */
+/* GET client by ID. */
 router.get('/:id', async (req, res) => {
     try {
         const id = req.params.id.toString();
@@ -23,7 +23,7 @@ router.get('/:id', async (req, res) => {
     }
   });
 
-/* POST a new user. */
+/* POST a new client. */
 router.post('/', async (req, res) => {
     try{
         const response = await ClientController.createClient(req, res);
@@ -33,7 +33,18 @@ router.post('/', async (req, res) => {
     }
 });
 
-/* DELETE user by ID. */
+/* UPDATE client by ID. */
+router.patch('/:id', async (req, res) => {
+    try {
+        const idClient = req.params.id.toString();
+        const response = await ClientController.updateClientById(idClient);
+        res.status(response.code).send(response.data);
+    } catch (error) {
+        res.status(500).send(error);
+    }
+  });
+
+/* DELETE client by ID. */
 router.delete('/:id', async (req, res) => {
     try {
         const id = req.params.id.toString();

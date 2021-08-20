@@ -137,10 +137,10 @@
       </div>
     </div>
     <div class="dimensions-container" v-show="activeBtn === 'Dimensions'">
-      <input type="text" placeholder="Choose Longueur min en mm">
-      <input type="text" placeholder="Choose Longueur max en mm">
-      <input type="text" placeholder="Choose Largeur min en mm">
-      <input type="text" placeholder="Choose Largeur max en mm">
+      <input type="text" placeholder="Choose Longueur min en mm" v-model="datas.$set.name"/>
+      <input type="text" placeholder="Choose Longueur max en mm" />
+      <input type="text" placeholder="Choose Largeur min en mm" />
+      <input type="text" placeholder="Choose Largeur max en mm" />
     </div>
     <div class="piet-container" v-show="activeBtn === 'Piètements'">
       <div class="img img-piet">
@@ -407,12 +407,13 @@
         </div>
       </div>
     </div>
-    <button class="save-changes">Save Changes</button>
+    <button class="save-changes" @click="updateName">Save Changes</button>
   </div>
 </template>
 
 <script>
 import InlineSvg from "vue-inline-svg";
+import { updateClientById, getClientById } from "../../modules/clients"
 export default {
   components: {
     InlineSvg,
@@ -462,12 +463,29 @@ export default {
         },
       ],
       activeBtn: "General",
+      idClient: "611f78229a3d86c9dab15d8b",
+      datas: {
+        $set: {
+          name: ""
+        }
+      }
     };
+  },
+  mounted () {
+      getClientById(this.idClient)
+        .then(res => {
+          this.datas.$set.name = res.data.name
+        });
+    
   },
   methods: {
     changeInputs(elem) {
       this.activeBtn = elem;
     },
+    updateName () {
+      updateClientById(this.idClient, this.datas).then(res => console.log(res));
+      console.log(this.datas);
+    }
   },
 };
 </script>
@@ -569,7 +587,6 @@ input {
       font-weight: 700;
       font-size: 10pt;
       color: #b3c1d0;
-
     }
   }
 
@@ -584,13 +601,14 @@ input {
     color: #767676;
     outline: none;
 
-    &:focus, &:hover {
-        border-color: #26ce83;
+    &:focus,
+    &:hover {
+      border-color: #26ce83;
     }
 
     &:focus::placeholder {
-            color: transparent;
-        }
+      color: transparent;
+    }
 
     &::placeholder {
       color: #b3c1d0;
@@ -603,30 +621,30 @@ input {
 }
 
 .dimensions-container {
+  input[type="text"] {
+    cursor: text;
+    width: 100%;
+    height: 27px;
+    margin-bottom: 1rem;
+    margin-right: 0;
+    color: #b3c1d0;
+    border: 1px solid #b3c1d0;
+    text-align: center;
+    outline: none;
 
-    input[type=text] {
-        cursor: text;
-        width: 100%;
-        height: 27px;
-        margin-bottom: 1rem;
-        margin-right: 0;
-        color: #b3c1d0;
-        border: 1px solid #b3c1d0;
-        text-align: center;
-        outline: none;
-
-        &:focus, &:hover {
-            border-color: #26ce83;
-        }
-
-        &:focus::placeholder {
-            color: transparent;
-        }
-
-        &::placeholder {
-            color: #b3c1d0;
-        }
+    &:focus,
+    &:hover {
+      border-color: #26ce83;
     }
+
+    &:focus::placeholder {
+      color: transparent;
+    }
+
+    &::placeholder {
+      color: #b3c1d0;
+    }
+  }
 }
 
 .save-changes {

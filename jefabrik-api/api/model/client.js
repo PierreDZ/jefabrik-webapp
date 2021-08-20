@@ -10,6 +10,10 @@ const ClientSchema = new mongoose.Schema(
 			type: String,
 			required: [true, 'Client email is required'],
 		},
+		phoneNumber: {
+			type: String,
+			required: [true, 'Client phone number is required'],
+		},
 		password: {
 			type: String,
 			required: [true, 'Client password is required'],
@@ -17,7 +21,11 @@ const ClientSchema = new mongoose.Schema(
 		profile_img: {
 			type: String,
 			required: [true, 'Client profile image is required'],
-		}
+		},
+		// configurateurs: {
+		// 	type: Array,
+		// 	required: true
+		// }
 	},
 	{ timestamps: true }
 );
