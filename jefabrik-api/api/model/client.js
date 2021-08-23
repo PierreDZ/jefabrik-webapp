@@ -21,11 +21,7 @@ const ClientSchema = new mongoose.Schema(
 		profile_img: {
 			type: String,
 			required: [true, 'Client profile image is required'],
-		},
-		// configurateurs: {
-		// 	type: Array,
-		// 	required: true
-		// }
+		}
 	},
 	{ timestamps: true }
 );

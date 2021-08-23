@@ -10,9 +10,13 @@ const ConfiguratorSchema = new mongoose.Schema(
 			type: String,
 			required: [true, 'name is required'],
 		},
+		version: {
+			type: String,
+			required: [true, 'version is required']
+		}
 	},
 	{ timestamps: true }
 );
 
-const Configurator = mongoose.model('Client',ConfiguratorSchema);
+const Configurator = mongoose.model('Config',ConfiguratorSchema);
 module.exports = Configurator;

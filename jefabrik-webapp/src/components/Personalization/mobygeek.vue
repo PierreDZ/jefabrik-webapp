@@ -12,60 +12,24 @@
         <label for="background-color">Background colors: </label>
         <div class="colors">
           <input type="color" name="darkblue" id="darkblue" value="#30336b" />
-          <input
-            type="color"
-            name="lightgreen"
-            id="lightgreen"
-            value="#55efc4"
-          />
-          <input type="color" name="orange" id="orange" value="#e17055" />
-          <input type="color" name="corail" id="corail" value="#d63031" />
-          <input type="color" name="blue" id="blue" value="#0984e3" />
         </div>
       </div>
       <div class="buttons-color">
         <label for="background-color">Buttons colors: </label>
         <div class="colors">
-          <input type="color" name="darkblue" id="darkblue" value="#30336b" />
-          <input
-            type="color"
-            name="lightgreen"
-            id="lightgreen"
-            value="#55efc4"
-          />
-          <input type="color" name="orange" id="orange" value="#e17055" />
-          <input type="color" name="corail" id="corail" value="#d63031" />
-          <input type="color" name="blue" id="blue" value="#0984e3" />
+          <input type="color" name="darkblue" id="darkblue" value="#DD2C38" />
         </div>
       </div>
       <div class="footer-color">
         <label for="background-color">Footer colors: </label>
         <div class="colors">
-          <input type="color" name="darkblue" id="darkblue" value="#30336b" />
-          <input
-            type="color"
-            name="lightgreen"
-            id="lightgreen"
-            value="#55efc4"
-          />
-          <input type="color" name="orange" id="orange" value="#e17055" />
-          <input type="color" name="corail" id="corail" value="#d63031" />
-          <input type="color" name="blue" id="blue" value="#0984e3" />
+          <input type="color" name="darkblue" id="darkblue" value="#3BBA54" />
         </div>
       </div>
       <div class="selected-color">
         <label for="background-color">Selected colors: </label>
         <div class="colors">
-          <input type="color" name="darkblue" id="darkblue" value="#30336b" />
-          <input
-            type="color"
-            name="lightgreen"
-            id="lightgreen"
-            value="#55efc4"
-          />
-          <input type="color" name="orange" id="orange" value="#e17055" />
-          <input type="color" name="corail" id="corail" value="#d63031" />
-          <input type="color" name="blue" id="blue" value="#0984e3" />
+          <input type="color" name="darkblue" id="darkblue" value="#F3D159" />
         </div>
       </div>
     </div>
@@ -180,45 +144,18 @@
         <label for="background-color">Color 1: </label>
         <div class="colors">
           <input type="color" name="darkblue" id="darkblue" value="#30336b" />
-          <input
-            type="color"
-            name="lightgreen"
-            id="lightgreen"
-            value="#55efc4"
-          />
-          <input type="color" name="orange" id="orange" value="#e17055" />
-          <input type="color" name="corail" id="corail" value="#d63031" />
-          <input type="color" name="blue" id="blue" value="#0984e3" />
         </div>
       </div>
       <div class="background-color">
         <label for="background-color">Color 2: </label>
         <div class="colors">
           <input type="color" name="darkblue" id="darkblue" value="#30336b" />
-          <input
-            type="color"
-            name="lightgreen"
-            id="lightgreen"
-            value="#55efc4"
-          />
-          <input type="color" name="orange" id="orange" value="#e17055" />
-          <input type="color" name="corail" id="corail" value="#d63031" />
-          <input type="color" name="blue" id="blue" value="#0984e3" />
         </div>
       </div>
       <div class="background-color">
         <label for="background-color">Color 3: </label>
         <div class="colors">
           <input type="color" name="darkblue" id="darkblue" value="#30336b" />
-          <input
-            type="color"
-            name="lightgreen"
-            id="lightgreen"
-            value="#55efc4"
-          />
-          <input type="color" name="orange" id="orange" value="#e17055" />
-          <input type="color" name="corail" id="corail" value="#d63031" />
-          <input type="color" name="blue" id="blue" value="#0984e3" />
         </div>
       </div>
     </div>
@@ -248,45 +185,18 @@
         <label for="background-color">Color 1: </label>
         <div class="colors">
           <input type="color" name="darkblue" id="darkblue" value="#30336b" />
-          <input
-            type="color"
-            name="lightgreen"
-            id="lightgreen"
-            value="#55efc4"
-          />
-          <input type="color" name="orange" id="orange" value="#e17055" />
-          <input type="color" name="corail" id="corail" value="#d63031" />
-          <input type="color" name="blue" id="blue" value="#0984e3" />
         </div>
       </div>
       <div class="background-color">
         <label for="background-color">Color 2: </label>
         <div class="colors">
           <input type="color" name="darkblue" id="darkblue" value="#30336b" />
-          <input
-            type="color"
-            name="lightgreen"
-            id="lightgreen"
-            value="#55efc4"
-          />
-          <input type="color" name="orange" id="orange" value="#e17055" />
-          <input type="color" name="corail" id="corail" value="#d63031" />
-          <input type="color" name="blue" id="blue" value="#0984e3" />
         </div>
       </div>
       <div class="background-color">
         <label for="background-color">Color 3: </label>
         <div class="colors">
           <input type="color" name="darkblue" id="darkblue" value="#30336b" />
-          <input
-            type="color"
-            name="lightgreen"
-            id="lightgreen"
-            value="#55efc4"
-          />
-          <input type="color" name="orange" id="orange" value="#e17055" />
-          <input type="color" name="corail" id="corail" value="#d63031" />
-          <input type="color" name="blue" id="blue" value="#0984e3" />
         </div>
       </div>
     </div>
@@ -309,45 +219,18 @@
         <label for="background-color">Color 1: </label>
         <div class="colors">
           <input type="color" name="darkblue" id="darkblue" value="#30336b" />
-          <input
-            type="color"
-            name="lightgreen"
-            id="lightgreen"
-            value="#55efc4"
-          />
-          <input type="color" name="orange" id="orange" value="#e17055" />
-          <input type="color" name="corail" id="corail" value="#d63031" />
-          <input type="color" name="blue" id="blue" value="#0984e3" />
         </div>
       </div>
       <div class="background-color">
         <label for="background-color">Color 2: </label>
         <div class="colors">
           <input type="color" name="darkblue" id="darkblue" value="#30336b" />
-          <input
-            type="color"
-            name="lightgreen"
-            id="lightgreen"
-            value="#55efc4"
-          />
-          <input type="color" name="orange" id="orange" value="#e17055" />
-          <input type="color" name="corail" id="corail" value="#d63031" />
-          <input type="color" name="blue" id="blue" value="#0984e3" />
         </div>
       </div>
       <div class="background-color">
         <label for="background-color">Color 3: </label>
         <div class="colors">
           <input type="color" name="darkblue" id="darkblue" value="#30336b" />
-          <input
-            type="color"
-            name="lightgreen"
-            id="lightgreen"
-            value="#55efc4"
-          />
-          <input type="color" name="orange" id="orange" value="#e17055" />
-          <input type="color" name="corail" id="corail" value="#d63031" />
-          <input type="color" name="blue" id="blue" value="#0984e3" />
         </div>
       </div>
     </div>
@@ -377,45 +260,18 @@
         <label for="background-color">Color 1: </label>
         <div class="colors">
           <input type="color" name="darkblue" id="darkblue" value="#30336b" />
-          <input
-            type="color"
-            name="lightgreen"
-            id="lightgreen"
-            value="#55efc4"
-          />
-          <input type="color" name="orange" id="orange" value="#e17055" />
-          <input type="color" name="corail" id="corail" value="#d63031" />
-          <input type="color" name="blue" id="blue" value="#0984e3" />
         </div>
       </div>
       <div class="background-color">
         <label for="background-color">Color 2: </label>
         <div class="colors">
           <input type="color" name="darkblue" id="darkblue" value="#30336b" />
-          <input
-            type="color"
-            name="lightgreen"
-            id="lightgreen"
-            value="#55efc4"
-          />
-          <input type="color" name="orange" id="orange" value="#e17055" />
-          <input type="color" name="corail" id="corail" value="#d63031" />
-          <input type="color" name="blue" id="blue" value="#0984e3" />
         </div>
       </div>
       <div class="background-color">
         <label for="background-color">Color 3: </label>
         <div class="colors">
           <input type="color" name="darkblue" id="darkblue" value="#30336b" />
-          <input
-            type="color"
-            name="lightgreen"
-            id="lightgreen"
-            value="#55efc4"
-          />
-          <input type="color" name="orange" id="orange" value="#e17055" />
-          <input type="color" name="corail" id="corail" value="#d63031" />
-          <input type="color" name="blue" id="blue" value="#0984e3" />
         </div>
       </div>
     </div>
@@ -507,9 +363,9 @@ export default {
 <style lang="scss" scoped>
 input {
   cursor: pointer;
-  width: 20px;
+  width: 70px;
   height: 20px;
-  margin-right: 10px;
+  margin-right: 20px;
   -webkit-appearance: none;
   border: none;
 

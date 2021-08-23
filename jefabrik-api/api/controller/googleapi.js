@@ -24,15 +24,11 @@ module.exports.runReport = async () => {
     metrics:    [{ name: "activeUsers" }],
   });
 
-  // console.log("Report result:");
-  // response.rows.forEach((row) => {
-  //   console.log(row.dimensionValues[0], row.metricValues[0]);
-  // });
   return response;
 };
 
 // Runs a simple report.
-module.exports.runReport2 = async () => {
+module.exports.runReportCountries = async () => {
   const [response] = await analyticsDataClient.runReport({
     property: `properties/${propertyId}`,
     dateRanges: [{ startDate: "28daysAgo", endDate: "today" }],
@@ -40,9 +36,27 @@ module.exports.runReport2 = async () => {
     metrics:    [{ name: "activeUsers" }],
   });
 
-  // console.log("Report result:");
-  // response.rows.forEach((row) => {
-  //   console.log(row.dimensionValues[0], row.metricValues[0]);
-  // });
+  return response;
+};
+
+module.exports.runReportSessions = async () => {
+  const [response] = await analyticsDataClient.runReport({
+    property: `properties/${propertyId}`,
+    dateRanges: [{ startDate: "28daysAgo", endDate: "today" }],
+    dimensions: [{ name: "date" }],
+    metrics:    [{ name: "sessions" }],
+  });
+
+  return response;
+};
+
+module.exports.runReportConversions = async () => {
+  const [response] = await analyticsDataClient.runReport({
+    property: `properties/${propertyId}`,
+    dateRanges: [{ startDate: "28daysAgo", endDate: "today" }],
+    dimensions: [{ name: "date" }],
+    metrics:    [{ name: "purchaseRevenue" }],
+  });
+
   return response;
 };

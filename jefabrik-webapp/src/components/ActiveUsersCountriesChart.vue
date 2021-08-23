@@ -10,7 +10,7 @@ export default {
         labels: this.labelsCtry,
         datasets: [
           {
-            label: this.dataLabelCtry,
+            label: `${this.dataLabelCtry} by Countries`,
             data: this.dataDatasCtry,
             backgroundColor: "#26ce83",
             borderColor: "#47b784",

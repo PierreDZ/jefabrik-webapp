@@ -1,6 +1,8 @@
 <template>
     <div class="login">
-      <section class="background-img"></section>
+      <section class="background-img">
+          <h1>Jefabrik Analytics</h1>
+      </section>
       <section class="log">
           <div class="inner-log">
               <p>Let's get started</p>
@@ -38,7 +40,15 @@ export default {
     grid-template-columns: repeat(2, 1fr);
 
     .background-img {
+        display: flex;
+        justify-content: center;
         background-color: rgba(38, 206, 131, 1);
+
+        h1 {
+            margin-top: 110px;
+            color: white;
+            font-size: 53px;
+        }
     }
 
     .log {

@@ -4,6 +4,21 @@ import router from './router'
 import Vuex from './store'
 import store from './store'
 import axios from 'axios'
+import { domain, clientId } from "../auth_config.json";
+import { Auth0Plugin } from "./auth";
+
+// Install the authentication plugin here
+Vue.use(Auth0Plugin, {
+  domain,
+  clientId,
+  onRedirectCallback: appState => {
+    router.push(
+      appState && appState.targetUrl
+        ? appState.targetUrl
+        : window.location.pathname
+    );
+  }
+});
 
 const instance = axios.create({
   baseURL: "http://localhost:3000",

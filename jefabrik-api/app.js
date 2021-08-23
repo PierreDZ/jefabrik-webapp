@@ -7,6 +7,7 @@ const indexRouter = require('./api/routes/index');
 const usersRouter = require('./api/routes/users');
 const googleApiRouter = require('./api/routes/googleapi');
 const clientRouter = require('./api/routes/clients');
+const configRouter = require('./api/routes/configurateur');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 require('dotenv');
@@ -50,6 +51,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/googleapi', googleApiRouter);
 app.use('/clients', clientRouter);
+app.use('/Configurateurs', configRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
