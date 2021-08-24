@@ -51,7 +51,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/googleapi', googleApiRouter);
 app.use('/clients', clientRouter);
-app.use('/Configurateurs', configRouter);
+app.use('/configurateurs', configRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

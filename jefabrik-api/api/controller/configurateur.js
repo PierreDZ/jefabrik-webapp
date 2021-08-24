@@ -43,7 +43,8 @@ module.exports.getAllConfigs = async () => {
       const newConfig = await new Config({
         urlVerge3D: req.body.verge,
         name: req.body.name,
-        version: req.body.version
+        version: req.body.version,
+        piètements: req.body.piètements
       });
   
       newConfig.save();
@@ -56,7 +57,7 @@ module.exports.getAllConfigs = async () => {
       return {
         code: 500,
         data: {
-          error: "Problem creating client",
+          error: "Problem creating config",
         },
       };
     }

@@ -1,5 +1,5 @@
 <template>
-  <div id="general-perso" :key="componentKey">
+  <div id="general-perso" :key="componentKey"  v-if="isMounted">
     <ul class="c-btns">
       <li v-for="(btn, index) in btns" :key="index">
         <button class="c-btn" :value="btn.name" @click="changeInputs(btn.name)">
@@ -104,17 +104,17 @@
       <input
         type="text"
         placeholder="Choose Longueur min en mm"
-        v-model="datas.name"
+        v-model="datasClient.name"
       />
       <input
         type="text"
         placeholder="Choose Longueur max en mm"
-        v-model="datas.email"
+        v-model="datasClient.email"
       />
       <input
         type="text"
         placeholder="Choose Largeur min en mm"
-        v-model="datas.password"
+        v-model="datasConfigs.urlVerge"
       />
       <input type="text" placeholder="Choose Largeur max en mm" />
     </div>
@@ -123,15 +123,15 @@
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input type="file" />
-        <input type="text" placeholder="Enter price" />
+        <input type="text" v-model="datasConfigs.piètements[0].image1"/>
+        <input type="text" placeholder="Enter price" v-model="datasConfigs.piètements[1].prix1"/>
       </div>
       <div class="img img-piet">
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
         <input type="file" placeholder="Upload image 1" />
-        <input type="text" placeholder="Enter price" />
+        <input type="text" placeholder="Enter price" v-model="datasConfigs.piètements[1].prix2"/>
       </div>
       <div class="img img-piet">
         <div class="img_wrapper">
@@ -143,13 +143,13 @@
       <div class="background-color">
         <label for="background-color">Color 1: </label>
         <div class="colors">
-          <input type="color" name="darkblue" id="darkblue" value="#30336b" />
+          <input type="color" name="darkblue" id="darkblue" value="#30336b" v-model="datasConfigs.piètements[2].couleur1"/>
         </div>
       </div>
       <div class="background-color">
         <label for="background-color">Color 2: </label>
         <div class="colors">
-          <input type="color" name="darkblue" id="darkblue" value="#30336b" />
+          <input type="color" name="darkblue" id="darkblue" value="#30336b"  v-model="datasConfigs.piètements[2].couleur2"/>
         </div>
       </div>
       <div class="background-color">
@@ -282,6 +282,7 @@
 <script>
 import InlineSvg from "vue-inline-svg";
 import { updateClientById, getClientById } from "../../modules/clients";
+import { getConfigById } from "../../modules/configurateurs";
 export default {
   components: {
     InlineSvg,
@@ -333,26 +334,42 @@ export default {
       activeBtn: "General",
       idClient: "611ff240e25634c357a298e7",
       componentKey: 0,
-      datas: {
+      isMounted: false,
+      datasClient: {
         name: "",
         email: "",
         password: "",
+        configurateurs: []
       },
+      datasConfigs: {
+        urlVerge: "",
+        name: "",
+        version: "",
+        piètements: []
+      }
     };
   },
-  mounted() {
-    getClientById(this.idClient).then((res) => {
-      this.datas.name = res.data.name;
-      this.datas.email = res.data.email;
-      this.datas.password = res.data.password;
+  async mounted() {
+    await getClientById(this.idClient).then((res) => {
+      this.datasClient.name = res.data.name;
+      this.datasClient.email = res.data.email;
+      this.datasClient.password = res.data.password;
+      this.datasClient.configurateurs = res.data.configurateurs;
     });
+
+    await getConfigById(this.datasClient.configurateurs[1]).then((res) => {
+      this.datasConfigs.piètements = res.data.piètements;
+    })
+
+    this.isMounted = true;
+
   },
   methods: {
     changeInputs(elem) {
       this.activeBtn = elem;
     },
     updateConfigDB() {
-      updateClientById(this.idClient, this.datas);
+      updateClientById(this.idClient, this.datasClient);
       this.componentKey += 1;
       this.activeBtn = "General";
     },

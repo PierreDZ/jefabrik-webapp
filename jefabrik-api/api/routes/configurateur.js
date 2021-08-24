@@ -2,7 +2,7 @@ var express = require('express');
 const ConfigController = require('../controller/configurateur');
 var router = express.Router();
 
-/* GET clients listing. */
+/* GET configurator listing. */
 router.get('/', async (req, res) => {
     try{
         const response = await ConfigController.getAllConfigs();
@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-/* GET clients by id. */
+/* GET configurator by id. */
 router.get('/:id', async (req, res) => {
     try{
         const id = req.params.id.toString();
