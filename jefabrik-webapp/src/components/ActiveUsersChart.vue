@@ -10,7 +10,7 @@ export default {
         labels: this.labels,
         datasets: [
           {
-            label: this.dataLabel,
+            label: `Nb of ${this.dataLabel} per days`,
             data: this.dataDatas,
             backgroundColor: "#26ce83",
             borderColor: "#47b784",

@@ -10,7 +10,7 @@ export default {
         labels: this.labelsSessions,
         datasets: [
           {
-            label: this.dataLabelsSessions,
+            label: `Nb of ${this.dataLabelsSessions} per days`,
             data: this.dataDatasSessions,
             backgroundColor: "#26ce83",
             borderColor: "#47b784",

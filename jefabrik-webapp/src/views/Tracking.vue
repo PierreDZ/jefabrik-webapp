@@ -44,7 +44,6 @@ import {
   getAnalyticsData,
   getAnalyticsDataCountries,
   getAnalyticsDataSessions,
-  getAnalyticsDataConversions,
 } from "../modules/google_api";
 
 export default {
@@ -60,8 +59,8 @@ export default {
   data() {
     return {
       title: "Tracking Infos",
-      loadedAll: null,
-      error: null,
+      loadedAll: false,
+      error: false,
       labels: [],
       labelsCtry: [],
       labelsSessions: [],
@@ -84,10 +83,15 @@ export default {
         this.userList = res.data.rows;
         this.dataLabel = res.data.metricHeaders[0].name;
         this.userList.forEach((elem) => {
-          this.labels.push(this.formatDate(elem.dimensionValues[0].value));
+          this.labels.push(elem.dimensionValues[0].value);
           this.dataDatas.push(elem.metricValues[0].value);
         });
-        this.error = false;
+        this.labels.sort((a, b) => {
+          return a - b;
+        });
+        this.labels.forEach((elem, i) => {
+          this.labels[i] = this.formatDate(elem);
+        });
       });
 
       await getAnalyticsDataCountries().then((res) => {
@@ -106,14 +110,19 @@ export default {
         this.userListSessions = res.data.rows;
         this.dataLabelsSessions = res.data.metricHeaders[0].name;
         this.userListSessions.forEach((elem) => {
-          this.labelsSessions.push(this.formatDate(elem.dimensionValues[0].value));
+          this.labelsSessions.push(elem.dimensionValues[0].value);
+          this.dataDatasSessions.push(elem.metricValues[0].value);
+        });
+        this.labelsSessions.sort((a, b) => {
+          return a - b;
+        });
+        this.labelsSessions.forEach((elem, i) => {
+           this.labelsSessions[i] = this.formatDate(elem);
         });
       });
 
-      await getAnalyticsDataConversions().then((res) => {
-        console.log(res.data);
-      });
     } catch (e) {
+
       console.error(e);
       this.error = true;
     }
