@@ -139,26 +139,26 @@
         <input
           type="text"
           placeholder="Enter price"
-          v-model="datasConfigs.caractéristiques.piètements[1].prix1"
+          v-model="datasConfigs.caractéristiques.piètements[1].price1"
         />
       </div>
       <div class="img img-piet">
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input type="file" placeholder="Upload image 1" />
+        <input class="img_input" type="text" placeholder="Upload image 2" v-model="datasConfigs.caractéristiques.piètements[0].image2"/>
         <input
           type="text"
           placeholder="Enter price"
-          v-model="datasConfigs.caractéristiques.piètements[1].prix2"
+          v-model="datasConfigs.caractéristiques.piètements[1].price2"
         />
       </div>
       <div class="img img-piet">
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input type="file" placeholder="Upload image 1" />
-        <input type="text" placeholder="Enter price" />
+        <input class="img_input" type="text" placeholder="Upload image 3" v-model="datasConfigs.caractéristiques.piètements[0].image3" />
+        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.piètements[1].price3" />
       </div>
       <div class="background-color">
         <label for="background-color">Color 1: </label>
@@ -167,7 +167,7 @@
             type="color"
             name="darkblue"
             id="darkblue"
-            v-model="datasConfigs.caractéristiques.piètements[2].couleur1"
+            v-model="datasConfigs.caractéristiques.piètements[2].color1"
           />
         </div>
       </div>
@@ -178,15 +178,14 @@
             type="color"
             name="darkblue"
             id="darkblue"
-            value="#30336b"
-            v-model="datasConfigs.caractéristiques.piètements[2].couleur2"
+            v-model="datasConfigs.caractéristiques.piètements[2].color2"
           />
         </div>
       </div>
       <div class="background-color">
         <label for="background-color">Color 3: </label>
         <div class="colors">
-          <input type="color" name="darkblue" id="darkblue" value="#30336b" />
+          <input type="color" name="darkblue" id="darkblue" v-model="datasConfigs.caractéristiques.piètements[2].color3" />
         </div>
       </div>
     </div>
@@ -195,39 +194,39 @@
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input type="file" />
-        <input type="text" placeholder="Enter price" />
+        <input class="img_input" type="text" v-model="datasConfigs.caractéristiques.passe_câbles[0].image1" />
+        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.piètements[1].price1" />
       </div>
       <div class="img img-piet">
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input type="file" placeholder="Upload image 1" />
-        <input type="text" placeholder="Enter price" />
+        <input class="img_input" type="text" v-model="datasConfigs.caractéristiques.passe_câbles[0].image2" />
+        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.piètements[1].price2" />
       </div>
       <div class="img img-piet">
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input type="file" placeholder="Upload image 1" />
-        <input type="text" placeholder="Enter price" />
+        <input class="img_input" type="text" v-model="datasConfigs.caractéristiques.passe_câbles[0].image3" />
+        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.piètements[1].price3" />
       </div>
       <div class="background-color">
         <label for="background-color">Color 1: </label>
         <div class="colors">
-          <input type="color" name="darkblue" id="darkblue" value="#30336b" />
+          <input type="color" name="darkblue" id="darkblue" v-model="datasConfigs.caractéristiques.piètements[2].color1" />
         </div>
       </div>
       <div class="background-color">
         <label for="background-color">Color 2: </label>
         <div class="colors">
-          <input type="color" name="darkblue" id="darkblue" value="#30336b" />
+          <input type="color" name="darkblue" id="darkblue" v-model="datasConfigs.caractéristiques.piètements[2].color2" />
         </div>
       </div>
       <div class="background-color">
         <label for="background-color">Color 3: </label>
         <div class="colors">
-          <input type="color" name="darkblue" id="darkblue" value="#30336b" />
+          <input type="color" name="darkblue" id="darkblue" v-model="datasConfigs.caractéristiques.piètements[2].color3" />
         </div>
       </div>
     </div>
@@ -236,32 +235,32 @@
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input type="file" />
-        <input type="text" placeholder="Enter price" />
+        <input class="img_input" type="text" v-model="datasConfigs.caractéristiques.goulottes[0].image1" />
+        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.goulottes[1].price1" />
       </div>
       <div class="img img-piet">
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input type="file" placeholder="Upload image 1" />
-        <input type="text" placeholder="Enter price" />
+        <input class="img_input" type="text" v-model="datasConfigs.caractéristiques.goulottes[0].image2" />
+        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.goulottes[1].price2" />
       </div>
       <div class="background-color">
         <label for="background-color">Color 1: </label>
         <div class="colors">
-          <input type="color" name="darkblue" id="darkblue" value="#30336b" />
+          <input type="color" name="darkblue" id="darkblue" v-model="datasConfigs.caractéristiques.goulottes[2].color1" />
         </div>
       </div>
       <div class="background-color">
         <label for="background-color">Color 2: </label>
         <div class="colors">
-          <input type="color" name="darkblue" id="darkblue" value="#30336b" />
+          <input type="color" name="darkblue" id="darkblue" v-model="datasConfigs.caractéristiques.goulottes[2].color2" />
         </div>
       </div>
       <div class="background-color">
         <label for="background-color">Color 3: </label>
         <div class="colors">
-          <input type="color" name="darkblue" id="darkblue" value="#30336b" />
+          <input type="color" name="darkblue" id="darkblue" v-model="datasConfigs.caractéristiques.goulottes[2].color3" />
         </div>
       </div>
     </div>
@@ -270,39 +269,39 @@
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input type="file" />
-        <input type="text" placeholder="Enter price" />
+        <input class="img_input" type="text" v-model="datasConfigs.caractéristiques.support_écrans[0].image1" />
+        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.support_écrans[1].price1" />
       </div>
       <div class="img img-piet">
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input type="file" placeholder="Upload image 1" />
-        <input type="text" placeholder="Enter price" />
+        <input class="img_input" type="text" v-model="datasConfigs.caractéristiques.support_écrans[0].image2" />
+        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.support_écrans[1].price2" />
       </div>
       <div class="img img-piet">
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input type="file" placeholder="Upload image 1" />
-        <input type="text" placeholder="Enter price" />
+        <input class="img_input" type="text" v-model="datasConfigs.caractéristiques.support_écrans[0].image3" />
+        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.support_écrans[1].price3" />
       </div>
       <div class="background-color">
         <label for="background-color">Color 1: </label>
         <div class="colors">
-          <input type="color" name="darkblue" id="darkblue" value="#30336b" />
+          <input type="color" name="darkblue" id="darkblue" v-model="datasConfigs.caractéristiques.support_écrans[2].color1" />
         </div>
       </div>
       <div class="background-color">
         <label for="background-color">Color 2: </label>
         <div class="colors">
-          <input type="color" name="darkblue" id="darkblue" value="#30336b" />
+          <input type="color" name="darkblue" id="darkblue" v-model="datasConfigs.caractéristiques.support_écrans[2].color2" />
         </div>
       </div>
       <div class="background-color">
         <label for="background-color">Color 3: </label>
         <div class="colors">
-          <input type="color" name="darkblue" id="darkblue" value="#30336b" />
+          <input type="color" name="darkblue" id="darkblue" v-model="datasConfigs.caractéristiques.support_écrans[2].color3" />
         </div>
       </div>
     </div>
@@ -379,6 +378,9 @@ export default {
           matériaux: [],
           dimentions: [],
           piètements: [],
+          passe_câbles: [],
+          goulottes: [],
+          support_écrans: []
         },
       },
     };
@@ -389,13 +391,14 @@ export default {
     });
 
     await getConfigById(this.datasClient.configurateurs_id[0]).then((res) => {
-      this.datasConfigs.caractéristiques.piètements =
-        res.data.caractéristiques.piètements;
-      this.datasConfigs.caractéristiques.general =
-        res.data.caractéristiques.general;
+      this.datasConfigs.caractéristiques.piètements = res.data.caractéristiques.piètements;
+      this.datasConfigs.caractéristiques.general = res.data.caractéristiques.general;
       this.datasConfigs.caractéristiques.formes = res.data.caractéristiques.formes;
       this.datasConfigs.caractéristiques.matériaux = res.data.caractéristiques.matériaux;
       this.datasConfigs.caractéristiques.dimentions = res.data.caractéristiques.dimentions;
+      this.datasConfigs.caractéristiques.passe_câbles = res.data.caractéristiques.passe_câbles;
+      this.datasConfigs.caractéristiques.goulottes = res.data.caractéristiques.goulottes;
+      this.datasConfigs.caractéristiques.support_écrans = res.data.caractéristiques.support_écrans;
     });
 
     this.isMounted = true;
