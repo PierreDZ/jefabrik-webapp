@@ -33,4 +33,15 @@ router.post('/', async (req, res) => {
     }
 });
 
+// Update configurateur
+router.patch('/:id', async (req, res) => {
+    try {
+        const id = req.params.id.toString();
+        const response = await ConfigController.updateConfigById(id, req);
+        res.status(response.code).send(response.data);
+    } catch (error) {
+        res.status(500).send(error)
+    }
+})
+
 module.exports = router;

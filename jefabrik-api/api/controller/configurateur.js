@@ -62,3 +62,22 @@ module.exports.getAllConfigs = async () => {
       };
     }
   };
+
+  module.exports.updateConfigById = async (id, req, res) => {
+    try {
+      const configFound = await Config.findByIdAndUpdate(id, req.body, {new: true, useFindAndModify: false})
+      if (!configFound) return { code: 404, data: { error: "No configurator found" } };
+  
+      return {
+        code: 200,
+        data: configFound,
+      };
+    } catch (error) {
+      return {
+        code: 500,
+        data: {
+          error: "Problem retrieving data",
+        },
+      };
+    }
+  };
