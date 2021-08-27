@@ -68,7 +68,7 @@ export default {
       .perso-content {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 3fr 1fr;
+        grid-template-rows: 5fr 1fr;
         gap: 1.5rem;
 
         .c-btns {

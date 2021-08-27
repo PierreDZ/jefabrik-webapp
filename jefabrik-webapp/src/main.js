@@ -6,6 +6,8 @@ import store from './store'
 import axios from 'axios'
 import { domain, clientId } from "../auth_config.json";
 import { Auth0Plugin } from "./auth";
+import VueToast from 'vue-toast-notification';
+import 'vue-toast-notification/dist/theme-sugar.css';
 
 // Install the authentication plugin here
 Vue.use(Auth0Plugin, {
@@ -19,6 +21,8 @@ Vue.use(Auth0Plugin, {
     );
   }
 });
+
+Vue.use(VueToast);
 
 const instance = axios.create({
   baseURL: "http://localhost:3000",

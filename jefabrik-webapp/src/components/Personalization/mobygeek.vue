@@ -58,29 +58,69 @@
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input type="text" class="img_input" placeholder="Upload image 1" v-model="datasConfigs.caractéristiques.formes[0].forme1"/>
-        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.formes[1].price1"/>
+        <input
+          type="text"
+          class="img_input"
+          placeholder="Upload image 1"
+          v-model="datasConfigs.caractéristiques.formes[0].forme1"
+        />
+        <input
+          type="text"
+          class="price"
+          placeholder="Enter price"
+          v-model="datasConfigs.caractéristiques.formes[1].price1"
+        />
       </div>
       <div class="img img_2">
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input class="img_input" type="text" placeholder="Upload image 2" v-model="datasConfigs.caractéristiques.formes[0].forme2"/>
-        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.formes[1].price2"/>
+        <input
+          class="img_input"
+          type="text"
+          placeholder="Upload image 2"
+          v-model="datasConfigs.caractéristiques.formes[0].forme2"
+        />
+        <input
+          type="text"
+          class="price"
+          placeholder="Enter price"
+          v-model="datasConfigs.caractéristiques.formes[1].price2"
+        />
       </div>
       <div class="img img_3">
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input class="img_input" type="text" placeholder="Upload image 3" v-model="datasConfigs.caractéristiques.formes[0].forme3"/>
-        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.formes[1].price3"/>
+        <input
+          class="img_input"
+          type="text"
+          placeholder="Upload image 3"
+          v-model="datasConfigs.caractéristiques.formes[0].forme3"
+        />
+        <input
+          type="text"
+          class="price"
+          placeholder="Enter price"
+          v-model="datasConfigs.caractéristiques.formes[1].price3"
+        />
       </div>
       <div class="img img_4">
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input class="img_input" type="text" placeholder="Upload image 4" v-model="datasConfigs.caractéristiques.formes[0].forme4"/>
-        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.formes[1].price4"/>
+        <input
+          class="img_input"
+          type="text"
+          placeholder="Upload image 4"
+          v-model="datasConfigs.caractéristiques.formes[0].forme4"
+        />
+        <input
+          type="text"
+          class="price"
+          placeholder="Enter price"
+          v-model="datasConfigs.caractéristiques.formes[1].price4"
+        />
       </div>
     </div>
     <div class="mat-container" v-show="activeBtn === 'Matériaux'">
@@ -88,43 +128,104 @@
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input class="img_input" type="text" v-model="datasConfigs.caractéristiques.matériaux[0].mat1"/>
-        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.matériaux[1].price1"/>
+        <input
+          class="img_input"
+          type="text"
+          v-model="datasConfigs.caractéristiques.matériaux[0].mat1"
+        />
+        <input
+          type="text"
+          class="price"
+          placeholder="Enter price"
+          v-model="datasConfigs.caractéristiques.matériaux[1].price1"
+        />
       </div>
       <div class="img img-mat">
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input class="img_input" type="text" v-model="datasConfigs.caractéristiques.matériaux[0].mat2"/>
-        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.matériaux[1].price2"/>
+        <input
+          class="img_input"
+          type="text"
+          v-model="datasConfigs.caractéristiques.matériaux[0].mat2"
+        />
+        <input
+          type="text"
+          class="price"
+          placeholder="Enter price"
+          v-model="datasConfigs.caractéristiques.matériaux[1].price2"
+        />
       </div>
       <div class="img img-mat">
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input class="img_input" type="text" v-model="datasConfigs.caractéristiques.matériaux[0].mat3"/>
-        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.matériaux[1].price3"/>
+        <input
+          class="img_input"
+          type="text"
+          v-model="datasConfigs.caractéristiques.matériaux[0].mat3"
+        />
+        <input
+          type="text"
+          class="price"
+          placeholder="Enter price"
+          v-model="datasConfigs.caractéristiques.matériaux[1].price3"
+        />
       </div>
       <div class="img img-mat">
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input class="img_input" type="text" v-model="datasConfigs.caractéristiques.matériaux[0].mat4"/>
-        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.matériaux[1].price4"/>
+        <input
+          class="img_input"
+          type="text"
+          v-model="datasConfigs.caractéristiques.matériaux[0].mat4"
+        />
+        <input
+          type="text"
+          class="price"
+          placeholder="Enter price"
+          v-model="datasConfigs.caractéristiques.matériaux[1].price4"
+        />
       </div>
       <div class="img img-mat">
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input class="img_input" type="text" v-model="datasConfigs.caractéristiques.matériaux[0].mat5"/>
-        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.matériaux[1].price5"/>
+        <input
+          class="img_input"
+          type="text"
+          v-model="datasConfigs.caractéristiques.matériaux[0].mat5"
+        />
+        <input
+          type="text"
+          class="price"
+          placeholder="Enter price"
+          v-model="datasConfigs.caractéristiques.matériaux[1].price5"
+        />
       </div>
     </div>
     <div class="dimensions-container" v-show="activeBtn === 'Dimensions'">
-      <input type="text" placeholder="Choose Longueur min en mm" v-model="datasConfigs.caractéristiques.dimentions[0].longueur_min"/>
-      <input type="text" placeholder="Choose Longueur max en mm" v-model="datasConfigs.caractéristiques.dimentions[0].longueur_max"/>
-      <input type="text" placeholder="Choose Largeur min en mm" v-model="datasConfigs.caractéristiques.dimentions[0].largeur_min"/>
-      <input type="text" placeholder="Choose Largeur max en mm" v-model="datasConfigs.caractéristiques.dimentions[0].largeur_max"/>
+      <input
+        type="text"
+        placeholder="Choose Longueur min en mm"
+        v-model="datasConfigs.caractéristiques.dimentions[0].longueur_min"
+      />
+      <input
+        type="text"
+        placeholder="Choose Longueur max en mm"
+        v-model="datasConfigs.caractéristiques.dimentions[0].longueur_max"
+      />
+      <input
+        type="text"
+        placeholder="Choose Largeur min en mm"
+        v-model="datasConfigs.caractéristiques.dimentions[0].largeur_min"
+      />
+      <input
+        type="text"
+        placeholder="Choose Largeur max en mm"
+        v-model="datasConfigs.caractéristiques.dimentions[0].largeur_max"
+      />
     </div>
     <div class="piet-container" v-show="activeBtn === 'Piètements'">
       <div class="img img-piet">
@@ -138,6 +239,7 @@
         />
         <input
           type="text"
+          class="price"
           placeholder="Enter price"
           v-model="datasConfigs.caractéristiques.piètements[1].price1"
         />
@@ -146,9 +248,15 @@
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input class="img_input" type="text" placeholder="Upload image 2" v-model="datasConfigs.caractéristiques.piètements[0].image2"/>
+        <input
+          class="img_input"
+          type="text"
+          placeholder="Upload image 2"
+          v-model="datasConfigs.caractéristiques.piètements[0].image2"
+        />
         <input
           type="text"
+          class="price"
           placeholder="Enter price"
           v-model="datasConfigs.caractéristiques.piètements[1].price2"
         />
@@ -157,8 +265,18 @@
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input class="img_input" type="text" placeholder="Upload image 3" v-model="datasConfigs.caractéristiques.piètements[0].image3" />
-        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.piètements[1].price3" />
+        <input
+          class="img_input"
+          type="text"
+          placeholder="Upload image 3"
+          v-model="datasConfigs.caractéristiques.piètements[0].image3"
+        />
+        <input
+          type="text"
+          class="price"
+          placeholder="Enter price"
+          v-model="datasConfigs.caractéristiques.piètements[1].price3"
+        />
       </div>
       <div class="background-color">
         <label for="background-color">Color 1: </label>
@@ -185,7 +303,12 @@
       <div class="background-color">
         <label for="background-color">Color 3: </label>
         <div class="colors">
-          <input type="color" name="darkblue" id="darkblue" v-model="datasConfigs.caractéristiques.piètements[2].color3" />
+          <input
+            type="color"
+            name="darkblue"
+            id="darkblue"
+            v-model="datasConfigs.caractéristiques.piètements[2].color3"
+          />
         </div>
       </div>
     </div>
@@ -194,39 +317,81 @@
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input class="img_input" type="text" v-model="datasConfigs.caractéristiques.passe_câbles[0].image1" />
-        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.piètements[1].price1" />
+        <input
+          class="img_input"
+          type="text"
+          v-model="datasConfigs.caractéristiques.passe_câbles[0].image1"
+        />
+        <input
+          type="text"
+          class="price"
+          placeholder="Enter price"
+          v-model="datasConfigs.caractéristiques.piètements[1].price1"
+        />
       </div>
       <div class="img img-piet">
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input class="img_input" type="text" v-model="datasConfigs.caractéristiques.passe_câbles[0].image2" />
-        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.piètements[1].price2" />
+        <input
+          class="img_input"
+          type="text"
+          v-model="datasConfigs.caractéristiques.passe_câbles[0].image2"
+        />
+        <input
+          type="text"
+          class="price"
+          placeholder="Enter price"
+          v-model="datasConfigs.caractéristiques.piètements[1].price2"
+        />
       </div>
       <div class="img img-piet">
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input class="img_input" type="text" v-model="datasConfigs.caractéristiques.passe_câbles[0].image3" />
-        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.piètements[1].price3" />
+        <input
+          class="img_input"
+          type="text"
+          v-model="datasConfigs.caractéristiques.passe_câbles[0].image3"
+        />
+        <input
+          type="text"
+          class="price"
+          placeholder="Enter price"
+          v-model="datasConfigs.caractéristiques.piètements[1].price3"
+        />
       </div>
       <div class="background-color">
         <label for="background-color">Color 1: </label>
         <div class="colors">
-          <input type="color" name="darkblue" id="darkblue" v-model="datasConfigs.caractéristiques.piètements[2].color1" />
+          <input
+            type="color"
+            name="darkblue"
+            id="darkblue"
+            v-model="datasConfigs.caractéristiques.piètements[2].color1"
+          />
         </div>
       </div>
       <div class="background-color">
         <label for="background-color">Color 2: </label>
         <div class="colors">
-          <input type="color" name="darkblue" id="darkblue" v-model="datasConfigs.caractéristiques.piètements[2].color2" />
+          <input
+            type="color"
+            name="darkblue"
+            id="darkblue"
+            v-model="datasConfigs.caractéristiques.piètements[2].color2"
+          />
         </div>
       </div>
       <div class="background-color">
         <label for="background-color">Color 3: </label>
         <div class="colors">
-          <input type="color" name="darkblue" id="darkblue" v-model="datasConfigs.caractéristiques.piètements[2].color3" />
+          <input
+            type="color"
+            name="darkblue"
+            id="darkblue"
+            v-model="datasConfigs.caractéristiques.piètements[2].color3"
+          />
         </div>
       </div>
     </div>
@@ -235,32 +400,65 @@
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input class="img_input" type="text" v-model="datasConfigs.caractéristiques.goulottes[0].image1" />
-        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.goulottes[1].price1" />
+        <input
+          class="img_input"
+          type="text"
+          v-model="datasConfigs.caractéristiques.goulottes[0].image1"
+        />
+        <input
+          type="text"
+          class="price"
+          placeholder="Enter price"
+          v-model="datasConfigs.caractéristiques.goulottes[1].price1"
+        />
       </div>
       <div class="img img-piet">
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input class="img_input" type="text" v-model="datasConfigs.caractéristiques.goulottes[0].image2" />
-        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.goulottes[1].price2" />
+        <input
+          class="img_input"
+          type="text"
+          v-model="datasConfigs.caractéristiques.goulottes[0].image2"
+        />
+        <input
+          type="text"
+          class="price"
+          placeholder="Enter price"
+          v-model="datasConfigs.caractéristiques.goulottes[1].price2"
+        />
       </div>
       <div class="background-color">
         <label for="background-color">Color 1: </label>
         <div class="colors">
-          <input type="color" name="darkblue" id="darkblue" v-model="datasConfigs.caractéristiques.goulottes[2].color1" />
+          <input
+            type="color"
+            name="darkblue"
+            id="darkblue"
+            v-model="datasConfigs.caractéristiques.goulottes[2].color1"
+          />
         </div>
       </div>
       <div class="background-color">
         <label for="background-color">Color 2: </label>
         <div class="colors">
-          <input type="color" name="darkblue" id="darkblue" v-model="datasConfigs.caractéristiques.goulottes[2].color2" />
+          <input
+            type="color"
+            name="darkblue"
+            id="darkblue"
+            v-model="datasConfigs.caractéristiques.goulottes[2].color2"
+          />
         </div>
       </div>
       <div class="background-color">
         <label for="background-color">Color 3: </label>
         <div class="colors">
-          <input type="color" name="darkblue" id="darkblue" v-model="datasConfigs.caractéristiques.goulottes[2].color3" />
+          <input
+            type="color"
+            name="darkblue"
+            id="darkblue"
+            v-model="datasConfigs.caractéristiques.goulottes[2].color3"
+          />
         </div>
       </div>
     </div>
@@ -269,39 +467,81 @@
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input class="img_input" type="text" v-model="datasConfigs.caractéristiques.support_écrans[0].image1" />
-        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.support_écrans[1].price1" />
+        <input
+          class="img_input"
+          type="text"
+          v-model="datasConfigs.caractéristiques.support_écrans[0].image1"
+        />
+        <input
+          type="text"
+          class="price"
+          placeholder="Enter price"
+          v-model="datasConfigs.caractéristiques.support_écrans[1].price1"
+        />
       </div>
       <div class="img img-piet">
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input class="img_input" type="text" v-model="datasConfigs.caractéristiques.support_écrans[0].image2" />
-        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.support_écrans[1].price2" />
+        <input
+          class="img_input"
+          type="text"
+          v-model="datasConfigs.caractéristiques.support_écrans[0].image2"
+        />
+        <input
+          type="text"
+          class="price"
+          placeholder="Enter price"
+          v-model="datasConfigs.caractéristiques.support_écrans[1].price2"
+        />
       </div>
       <div class="img img-piet">
         <div class="img_wrapper">
           <img src="../../assets/images/empty_image.png" alt="" />
         </div>
-        <input class="img_input" type="text" v-model="datasConfigs.caractéristiques.support_écrans[0].image3" />
-        <input type="text" placeholder="Enter price" v-model="datasConfigs.caractéristiques.support_écrans[1].price3" />
+        <input
+          class="img_input"
+          type="text"
+          v-model="datasConfigs.caractéristiques.support_écrans[0].image3"
+        />
+        <input
+          type="text"
+          class="price"
+          placeholder="Enter price"
+          v-model="datasConfigs.caractéristiques.support_écrans[1].price3"
+        />
       </div>
       <div class="background-color">
         <label for="background-color">Color 1: </label>
         <div class="colors">
-          <input type="color" name="darkblue" id="darkblue" v-model="datasConfigs.caractéristiques.support_écrans[2].color1" />
+          <input
+            type="color"
+            name="darkblue"
+            id="darkblue"
+            v-model="datasConfigs.caractéristiques.support_écrans[2].color1"
+          />
         </div>
       </div>
       <div class="background-color">
         <label for="background-color">Color 2: </label>
         <div class="colors">
-          <input type="color" name="darkblue" id="darkblue" v-model="datasConfigs.caractéristiques.support_écrans[2].color2" />
+          <input
+            type="color"
+            name="darkblue"
+            id="darkblue"
+            v-model="datasConfigs.caractéristiques.support_écrans[2].color2"
+          />
         </div>
       </div>
       <div class="background-color">
         <label for="background-color">Color 3: </label>
         <div class="colors">
-          <input type="color" name="darkblue" id="darkblue" v-model="datasConfigs.caractéristiques.support_écrans[2].color3" />
+          <input
+            type="color"
+            name="darkblue"
+            id="darkblue"
+            v-model="datasConfigs.caractéristiques.support_écrans[2].color3"
+          />
         </div>
       </div>
     </div>
@@ -380,7 +620,7 @@ export default {
           piètements: [],
           passe_câbles: [],
           goulottes: [],
-          support_écrans: []
+          support_écrans: [],
         },
       },
     };
@@ -391,14 +631,22 @@ export default {
     });
 
     await getConfigById(this.datasClient.configurateurs_id[0]).then((res) => {
-      this.datasConfigs.caractéristiques.piètements = res.data.caractéristiques.piètements;
-      this.datasConfigs.caractéristiques.general = res.data.caractéristiques.general;
-      this.datasConfigs.caractéristiques.formes = res.data.caractéristiques.formes;
-      this.datasConfigs.caractéristiques.matériaux = res.data.caractéristiques.matériaux;
-      this.datasConfigs.caractéristiques.dimentions = res.data.caractéristiques.dimentions;
-      this.datasConfigs.caractéristiques.passe_câbles = res.data.caractéristiques.passe_câbles;
-      this.datasConfigs.caractéristiques.goulottes = res.data.caractéristiques.goulottes;
-      this.datasConfigs.caractéristiques.support_écrans = res.data.caractéristiques.support_écrans;
+      this.datasConfigs.caractéristiques.piètements =
+        res.data.caractéristiques.piètements;
+      this.datasConfigs.caractéristiques.general =
+        res.data.caractéristiques.general;
+      this.datasConfigs.caractéristiques.formes =
+        res.data.caractéristiques.formes;
+      this.datasConfigs.caractéristiques.matériaux =
+        res.data.caractéristiques.matériaux;
+      this.datasConfigs.caractéristiques.dimentions =
+        res.data.caractéristiques.dimentions;
+      this.datasConfigs.caractéristiques.passe_câbles =
+        res.data.caractéristiques.passe_câbles;
+      this.datasConfigs.caractéristiques.goulottes =
+        res.data.caractéristiques.goulottes;
+      this.datasConfigs.caractéristiques.support_écrans =
+        res.data.caractéristiques.support_écrans;
     });
 
     this.isMounted = true;
@@ -411,6 +659,10 @@ export default {
       updateConfigById(this.datasClient.configurateurs_id, this.datasConfigs);
       this.componentKey += 1;
       this.activeBtn = "General";
+      this.$toast.success("Configurateur mis à jour 😀 !", {
+        position: "top",
+        duration: 3000,
+      });
     },
   },
 };
@@ -472,7 +724,7 @@ input {
 .img {
   display: flex;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.3rem;
   height: 34px;
 
   .img_wrapper {
@@ -487,37 +739,7 @@ input {
 
   .img_input {
     width: 60%;
-  }
-
-  input[type="file"] {
-    width: 60%;
-    height: 100%;
-    margin: 0;
-
-    &::-webkit-file-upload-button {
-      visibility: hidden;
-    }
-
-    &::before {
-      content: "Upload your image";
-      width: 90%;
-      height: 65%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(top, #f9f9f9, #e3e3e3);
-      border: 1px solid #b3c1d0;
-      border-radius: 3px;
-      padding: 5px 8px;
-      margin: 0;
-      outline: none;
-      white-space: nowrap;
-      cursor: pointer;
-      text-shadow: 1px 1px #fff;
-      font-weight: 700;
-      font-size: 10pt;
-      color: #b3c1d0;
-    }
+    margin-right: 20px;
   }
 
   input[type="text"] {
@@ -529,6 +751,10 @@ input {
     padding: 5px 8px;
     color: #767676;
     outline: none;
+
+    &.price {
+      width: 20%;
+    }
 
     &:focus,
     &:hover {
@@ -546,7 +772,7 @@ input {
 }
 
 .img-mat {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
 }
 
 .dimensions-container {
