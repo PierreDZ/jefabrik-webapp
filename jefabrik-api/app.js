@@ -7,7 +7,7 @@ const indexRouter = require('./api/routes/index');
 const usersRouter = require('./api/routes/users');
 const googleApiRouter = require('./api/routes/googleapi');
 const clientRouter = require('./api/routes/clients');
-const configRouter = require('./api/routes/configurateur');
+const configRouter = require('./api/routes/configurateurs');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 require('dotenv');

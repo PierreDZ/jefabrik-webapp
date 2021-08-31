@@ -5,7 +5,6 @@ module.exports.createClient = async (req, res) => {
     const newClient = await new Client({
       name: req.body.name,
       email: req.body.email,
-      phoneNumber: req.body.phoneNumber,
       password: req.body.password,
       profile_img: req.body.profile_img
     });

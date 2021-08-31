@@ -1,4 +1,4 @@
-const Config = require('../model/configurator');
+const Config = require('../model/configurateur');
 
 module.exports.getAllConfigs = async () => {
     try {
@@ -41,10 +41,10 @@ module.exports.getAllConfigs = async () => {
   module.exports.createConfig = async (req, res) => {
     try {
       const newConfig = await new Config({
-        urlVerge3D: req.body.verge,
+        urlVerge3D: req.body.urlVerge3D,
         name: req.body.name,
         version: req.body.version,
-        piètements: req.body.piètements
+        caractéristiques: req.body.caractéristiques
       });
   
       newConfig.save();
