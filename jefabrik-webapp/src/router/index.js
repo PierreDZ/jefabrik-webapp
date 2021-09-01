@@ -5,6 +5,7 @@ import Tracking from '../views/Tracking.vue'
 import Integration from '../views/Integration.vue'
 import Personalization from '../views/Personalization.vue'
 import Login from '../views/Login.vue'
+import { authGuard } from "../auth/authGuard"
 
 
 Vue.use(VueRouter)
@@ -18,22 +19,26 @@ const routes = [
   {
     path: '/Dashboard',
     name: 'Dashboard',
-    component: Dashboard
+    component: Dashboard,
+    beforeEnter: authGuard
   },
   {
     path: '/Tracking-infos',
     name: 'Tracking',
-    component: Tracking
+    component: Tracking,
+    beforeEnter: authGuard
   },
   {
     path: '/Integration',
     name: 'Integration',
-    component: Integration
+    component: Integration,
+    beforeEnter: authGuard
   },
   {
     path: '/Personalization',
     name: 'Personalization',
-    component: Personalization
+    component: Personalization,
+    beforeEnter: authGuard
   }
 ]
 
