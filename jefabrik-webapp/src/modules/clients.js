@@ -3,7 +3,7 @@ import Vue from 'vue';
 async function getClients() {
     try {
       const res = await Vue.prototype.$http({
-        url: "/clients",
+        url: "clients",
         method: "get",
       });
       return res;
@@ -18,7 +18,7 @@ async function getClients() {
   async function getClientById(id) {
     try {
       const res = await Vue.prototype.$http({
-        url: "/clients/" + id,
+        url: "clients/" + id,
         method: "get",
       });
       return res;
@@ -30,20 +30,4 @@ async function getClients() {
     }
   }
 
-  async function updateClientById(id, data) {
-    try {
-      const res = await Vue.prototype.$http({
-        url: "/clients/" + id,
-        method: "patch",
-        data: data
-      });
-      return res;
-    } catch (e) {
-      console.log("error ! ", e);
-      return {
-        error: e,
-      };
-    }
-  }
-
-  export { getClients, getClientById, updateClientById }
+  export { getClients, getClientById }

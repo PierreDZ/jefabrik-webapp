@@ -25,7 +25,7 @@ Vue.use(Auth0Plugin, {
 Vue.use(VueToast);
 
 const instance = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "http://localhost:3000/",
   withCredentials: false,
 });
 

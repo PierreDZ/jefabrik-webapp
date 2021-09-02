@@ -3,7 +3,7 @@ import Vue from "vue";
 async function getAnalyticsData() {
   try {
     const res = await Vue.prototype.$http({
-      url: "/googleapi/analytics-data",
+      url: "googleapi/analytics-data",
       method: "get",
     });
     return res;
@@ -18,7 +18,7 @@ async function getAnalyticsData() {
 async function getAnalyticsDataCountries() {
   try {
     const res = await Vue.prototype.$http({
-      url: "/googleapi/analytics-data-countries",
+      url: "googleapi/analytics-data-countries",
       method: "get",
     });
     return res;
@@ -33,7 +33,7 @@ async function getAnalyticsDataCountries() {
 async function getAnalyticsDataSessions() {
   try {
     const res = await Vue.prototype.$http({
-      url: "/googleapi/analytics-data-sessions",
+      url: "googleapi/analytics-data-sessions",
       method: "get",
     });
     return res;
@@ -48,7 +48,7 @@ async function getAnalyticsDataSessions() {
 async function getAnalyticsDataConversions() {
   try {
     const res = await Vue.prototype.$http({
-      url: "/googleapi/analytics-data-conversions",
+      url: "googleapi/analytics-data-conversions",
       method: "get",
     });
     return res;

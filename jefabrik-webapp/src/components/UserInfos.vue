@@ -1,13 +1,14 @@
 <template>
   <div id="user-infos">
     <div class="notification-img">
-      <img src="../assets/images/logo moby-geek.png" alt="" srcset="">
+      <img :src="$auth.user.picture" alt="" srcset="">
       <span class="badge"></span>
     </div>
-    <p>{{ user_name }}</p>
+    <p>{{ $auth.user.name }}</p>
     <p>Host : {{ host_name }}</p>
     <button>Maintenance</button>
     <button>Need help ?</button>
+    <button @click="logout">Log out</button>
   </div>
 </template>
 
@@ -16,9 +17,15 @@ export default {
   name: 'UserInfos',
   data () {
     return {
-      user_name: 'Moby-geek',
       host_name: 'AWS',
       problem: false
+    }
+  },
+  methods: {
+    logout() {
+      this.$auth.logout({
+        returnTo: window.location.origin,
+      });
     }
   }
 }
