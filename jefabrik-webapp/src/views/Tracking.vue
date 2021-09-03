@@ -45,6 +45,7 @@ import {
   getAnalyticsDataCountries,
   getAnalyticsDataSessions,
 } from "../modules/google_api";
+import { getClientByAuth_id } from '../modules/clients';
 
 export default {
   name: "Tracking",
@@ -74,11 +75,16 @@ export default {
       userList: null,
       userListCtry: null,
       userListSessions: null,
+      GA_id: ""
     };
   },
   async mounted() {
     try {
-      await getAnalyticsData().then((res) => {
+      await getClientByAuth_id(this.$auth.user.sub).then((res) => {
+        this.GA_id = res.data[0].GA_id;
+      })
+
+      await getAnalyticsData(this.GA_id).then((res) => {
         // console.log('response in my webpage',res.data);
         this.userList = res.data.rows;
         this.dataLabel = res.data.metricHeaders[0].name;
@@ -86,14 +92,12 @@ export default {
           this.labels.push(elem.dimensionValues[0].value);
           this.dataDatas.push(elem.metricValues[0].value);
         });
-        console.log(this.labels);
-        console.log(this.dataDatas);
         this.labels.forEach((elem, i) => {
           this.labels[i] = this.formatDate(elem);
         });
       });
 
-      await getAnalyticsDataCountries().then((res) => {
+      await getAnalyticsDataCountries(this.GA_id).then((res) => {
         // console.log('response in my webpage', res.data);
         this.userListCtry = res.data.rows;
         this.countryLabel = res.data.dimensionHeaders[0].name;
@@ -104,7 +108,7 @@ export default {
         });
       });
 
-      await getAnalyticsDataSessions().then((res) => {
+      await getAnalyticsDataSessions(this.GA_id).then((res) => {
         // console.log(res.data);
         this.userListSessions = res.data.rows;
         this.dataLabelsSessions = res.data.metricHeaders[0].name;
@@ -159,6 +163,7 @@ export default {
 
   .tracking-content {
     display: grid;
+    margin-top: 30px;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     gap: 1.5rem;

@@ -1,9 +1,9 @@
 import Vue from "vue";
 
-async function getAnalyticsData() {
+async function getAnalyticsData(id) {
   try {
     const res = await Vue.prototype.$http({
-      url: "googleapi/analytics-data",
+      url: "googleapi/analytics-data/" + id,
       method: "get",
     });
     return res;
@@ -15,10 +15,10 @@ async function getAnalyticsData() {
   }
 }
 
-async function getAnalyticsDataCountries() {
+async function getAnalyticsDataCountries(id) {
   try {
     const res = await Vue.prototype.$http({
-      url: "googleapi/analytics-data-countries",
+      url: "googleapi/analytics-data-countries/" + id,
       method: "get",
     });
     return res;
@@ -30,10 +30,10 @@ async function getAnalyticsDataCountries() {
   }
 }
 
-async function getAnalyticsDataSessions() {
+async function getAnalyticsDataSessions(id) {
   try {
     const res = await Vue.prototype.$http({
-      url: "googleapi/analytics-data-sessions",
+      url: "googleapi/analytics-data-sessions/" + id,
       method: "get",
     });
     return res;
@@ -45,10 +45,10 @@ async function getAnalyticsDataSessions() {
   }
 }
 
-async function getAnalyticsDataConversions() {
+async function getAnalyticsDataConversions(id) {
   try {
     const res = await Vue.prototype.$http({
-      url: "googleapi/analytics-data-conversions",
+      url: "googleapi/analytics-data-conversions" + id,
       method: "get",
     });
     return res;

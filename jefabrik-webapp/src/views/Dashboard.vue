@@ -4,15 +4,7 @@
     <Header :title="title" />
     <UserInfos />
       <div class="configurator-container">
-        <iframe 
-        id="v3d_iframe" 
-        class="v3d-iframe" 
-        src="https://www.moby-geek.com/wp-content/uploads/verge3d/moby-geek_configurator_webpage/index.html?configurationId=700&amp;userId=1200&amp;wcProductCategorySlug=configurateur-bureau&amp;redirectUrl=https://www.moby-geek.com/configurateur/" 
-        width="100%" 
-        height="100%" 
-        data-hj-allow-iframe
-        >
-				</iframe>
+        <Iframe :urlConfig="urlConfig" />
         <p>Last connexion on {{ connectionDate.getDate() }}/{{ connectionDate.getMonth() }}/{{ connectionDate.getFullYear() }} at {{ connectionDate.getHours() }}h{{ getMinutes + connectionDate.getMinutes() }}</p>
       </div>
   </div>
@@ -23,19 +15,34 @@
 import Header from '@/components/Header.vue';
 import Navigation from '@/components/Navigation.vue';
 import UserInfos from '@/components/UserInfos.vue';
+import Iframe from '@/components/Iframe.vue'
+import { getClientByAuth_id } from '../modules/clients'
+import { getConfigById } from '../modules/configurateurs'
 
 export default {
   name: 'Dashboard',
   components: {
     Header,
     Navigation,
-    UserInfos
+    UserInfos,
+    Iframe
   },
   data () {
     return {
       title: 'Dashboard',
       connectionDate: new Date,
+      config_id: "",
+      urlConfig: ""
     }
+  },
+  async mounted() {
+    await getClientByAuth_id(this.$auth.user.sub).then(res => {
+      this.config_id = res.data[0].configurateurs[0];
+    });
+
+    await getConfigById(this.config_id).then(res => {
+      this.urlConfig = res.data.urlVerge3D
+    });
   },
   computed: {
     getMinutes: function () {

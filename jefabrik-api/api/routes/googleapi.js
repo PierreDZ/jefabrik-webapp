@@ -3,36 +3,40 @@ const { runReport, runReportCountries, runReportSessions, runReportConversions }
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/analytics-data', async function(req, res, next) {
+router.get('/analytics-data/:id', async function(req, res, next) {
   try{
-    const response = await runReport();
+    const id = req.params.id.toString();
+    const response = await runReport(id);
     res.status(200).send(response);
   }catch(error){
     res.status(500).send(error);
   }
 });
 
-router.get('/analytics-data-countries', async function(req, res, next) {
+router.get('/analytics-data-countries/:id', async function(req, res, next) {
   try{
-    const response = await runReportCountries();
+    const id = req.params.id.toString();
+    const response = await runReportCountries(id);
     res.status(200).send(response);
   }catch(error){
     res.status(500).send(error);
   }
 });
 
-router.get('/analytics-data-sessions', async function(req, res, next) {
+router.get('/analytics-data-sessions/:id', async function(req, res, next) {
   try{
-    const response = await runReportSessions();
+    const id = req.params.id.toString();
+    const response = await runReportSessions(id);
     res.status(200).send(response);
   }catch(error){
     res.status(500).send(error);
   }
 });
 
-router.get('/analytics-data-conversions', async function(req, res, next) {
+router.get('/analytics-data-conversions/:id', async function(req, res, next) {
   try{
-    const response = await runReportConversions();
+    const id = req.params.id.toString();
+    const response = await runReportConversions(id);
     res.status(200).send(response);
   }catch(error){
     res.status(500).send(error);

@@ -4,8 +4,7 @@
     <Header :title="title" />
     <UserInfos />
     <div class="perso-content">
-      <Moby_geek />
-      <Iframe />
+      <Moby_geek v-if="this.$auth.user.sub === 'auth0|6130c22fbda71b0071ba30c1'"/>
       <p>
         Last update the {{ updateDate.getDate() }}/{{
           updateDate.getMonth()
@@ -21,7 +20,6 @@
 import Header from "@/components/Header.vue";
 import Navigation from "@/components/Navigation.vue";
 import UserInfos from "@/components/UserInfos.vue";
-import Iframe from "@/components/Personalization/Iframe.vue";
 import Moby_geek from "@/components/Personalization/mobygeek.vue";
 
 export default {
@@ -31,7 +29,6 @@ export default {
     Header,
     Navigation,
     UserInfos,
-    Iframe,
     Moby_geek,
   },
   data() {
@@ -74,7 +71,7 @@ export default {
 
   .perso-content {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: 5fr 1fr;
     gap: 1.5rem;
 
@@ -83,17 +80,12 @@ export default {
       grid-row: 1/2;
     }
 
-    #iframe {
-      grid-column: 2/3;
-      grid-row: 1/2;
-    }
-
     #general-perso {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       height: 100%;
-      grid-column: 1/2;
+      grid-column: 2/3;
       grid-row: 1/2;
     }
 

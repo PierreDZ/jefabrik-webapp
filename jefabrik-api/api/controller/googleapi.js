@@ -1,11 +1,13 @@
 const dotenv = require("dotenv");
+const ClientController = require("../controller/client");
 dotenv.config();
 
 /**
  * TODO(developer): Uncomment this variable and replace with your
  *   Google Analytics 4 property ID before running the sample.
  */
-const propertyId = process.env.GOOGLE_API_PROPERTY_ID;
+
+// const propertyId = process.env.GOOGLE_API_PROPERTY_ID;
 
 // Imports the Google Analytics Data API client library.
 const { BetaAnalyticsDataClient } = require("@google-analytics/data");
@@ -16,9 +18,9 @@ const analyticsDataClient = new BetaAnalyticsDataClient();
 
 
 // Runs a simple report.
-module.exports.runReport = async () => {
+module.exports.runReport = async (id) => {
   const [response] = await analyticsDataClient.runReport({
-    property: `properties/${propertyId}`,
+    property: `properties/${id}`,
     dateRanges: [{ startDate: "7daysAgo", endDate: "today" }],
     dimensions: [{ name: "date" }],
     metrics:    [{ name: "activeUsers" }],
@@ -29,9 +31,9 @@ module.exports.runReport = async () => {
 };
 
 // Runs a simple report.
-module.exports.runReportCountries = async () => {
+module.exports.runReportCountries = async (id) => {
   const [response] = await analyticsDataClient.runReport({
-    property: `properties/${propertyId}`,
+    property: `properties/${id}`,
     dateRanges: [{ startDate: "7daysAgo", endDate: "today" }],
     dimensions: [{ name: "city" }],
     metrics:    [{ name: "activeUsers" }],
@@ -41,9 +43,9 @@ module.exports.runReportCountries = async () => {
   return response;
 };
 
-module.exports.runReportSessions = async () => {
+module.exports.runReportSessions = async (id) => {
   const [response] = await analyticsDataClient.runReport({
-    property: `properties/${propertyId}`,
+    property: `properties/${id}`,
     dateRanges: [{ startDate: "7daysAgo", endDate: "today" }],
     dimensions: [{ name: "date" }],
     metrics:    [{ name: "engagementRate" }],
@@ -53,9 +55,9 @@ module.exports.runReportSessions = async () => {
   return response;
 };
 
-module.exports.runReportConversions = async () => {
+module.exports.runReportConversions = async (id) => {
   const [response] = await analyticsDataClient.runReport({
-    property: `properties/${propertyId}`,
+    property: `properties/${id}`,
     dateRanges: [{ startDate: "7daysAgo", endDate: "today" }],
     dimensions: [{ name: "date" }],
     metrics:    [{ name: "purchaseRevenue" }],
