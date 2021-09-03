@@ -36,6 +36,7 @@ export default {
     }
   },
   async mounted() {
+    console.log(this.$auth.user);
     await getClientByAuth_id(this.$auth.user.sub).then(res => {
       this.config_id = res.data[0].configurateurs[0];
     });

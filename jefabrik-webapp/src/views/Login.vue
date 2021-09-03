@@ -64,8 +64,10 @@ export default {
     text-align: left;
 
     .inner-log {
+      height: 100%;
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
 
       p {
         margin: 50px 0;

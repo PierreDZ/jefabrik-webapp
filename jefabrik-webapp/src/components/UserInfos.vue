@@ -7,7 +7,7 @@
     <p>{{ $auth.user.name }}</p>
     <p>Host : {{ host_name }}</p>
     <button>Maintenance</button>
-    <button>Need help ?</button>
+    <button @click="sendMail">Need help ?</button>
     <button @click="logout">Log out</button>
   </div>
 </template>
@@ -26,6 +26,9 @@ export default {
       this.$auth.logout({
         returnTo: window.location.origin,
       });
+    },
+    sendMail() {
+      window.open('mailto:contact@moby-geek.com');
     }
   }
 }

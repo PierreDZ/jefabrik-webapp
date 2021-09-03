@@ -3,6 +3,7 @@
     <Navigation />
     <Header :title="title" />
     <div class="tracking-content">
+      <ClipLoader class="loader" v-if="!loadedAll" :color="loaderColor" :size="loaderSize" />
       <LineChart
         v-if="loadedAll"
         :labels="labels"
@@ -45,7 +46,8 @@ import {
   getAnalyticsDataCountries,
   getAnalyticsDataSessions,
 } from "../modules/google_api";
-import { getClientByAuth_id } from '../modules/clients';
+import { getClientByAuth_id } from "../modules/clients";
+import { ClipLoader } from "@saeris/vue-spinners";
 
 export default {
   name: "Tracking",
@@ -56,11 +58,14 @@ export default {
     LineChart,
     LineChart2,
     LineChart3,
+    ClipLoader,
   },
   data() {
     return {
       title: "Tracking Infos",
       loadedAll: false,
+      loaderColor: "#26ce83",
+      loaderSize: 60,
       error: false,
       labels: [],
       labelsCtry: [],
@@ -75,14 +80,14 @@ export default {
       userList: null,
       userListCtry: null,
       userListSessions: null,
-      GA_id: ""
+      GA_id: "",
     };
   },
   async mounted() {
     try {
       await getClientByAuth_id(this.$auth.user.sub).then((res) => {
         this.GA_id = res.data[0].GA_id;
-      })
+      });
 
       await getAnalyticsData(this.GA_id).then((res) => {
         // console.log('response in my webpage',res.data);
@@ -117,12 +122,10 @@ export default {
           this.dataDatasSessions.push(elem.metricValues[0].value);
         });
         this.labelsSessions.forEach((elem, i) => {
-           this.labelsSessions[i] = this.formatDate(elem);
+          this.labelsSessions[i] = this.formatDate(elem);
         });
       });
-
     } catch (e) {
-
       console.error(e);
       this.error = true;
     }
@@ -173,6 +176,16 @@ export default {
       flex-direction: column;
       align-items: center;
       margin-top: 50px;
+    }
+    LineChart3{
+      grid-column: 1/3;
+
+    }
+
+    .loader {
+      margin-top: 80px;
+      grid-column: 1/3;
+      justify-self: center;
     }
 
     .error {

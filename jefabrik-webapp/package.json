@@ -10,6 +10,7 @@
   "dependencies": {
     "@auth0/auth0-spa-js": "^1.17.0",
     "@google-analytics/data": "^2.5.1",
+    "@saeris/vue-spinners": "^1.0.8",
     "axios": "^0.21.1",
     "chart.js": "^2.9.4",
     "core-js": "^3.6.5",
