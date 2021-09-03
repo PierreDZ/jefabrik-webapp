@@ -26,7 +26,9 @@ export default {
   name: "Login",
   methods: {
     login() {
-      this.$auth.loginWithRedirect();
+      this.$auth.loginWithRedirect({
+        redirect_uri: window.location.origin + "/Dashboard"
+      });
     },
     logout() {
       this.$auth.logout({

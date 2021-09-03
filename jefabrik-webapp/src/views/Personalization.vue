@@ -4,7 +4,7 @@
     <Header :title="title" />
     <UserInfos />
     <div class="perso-content">
-      <General />
+      <Moby_geek />
       <Iframe />
       <p>
         Last update the {{ updateDate.getDate() }}/{{
@@ -22,7 +22,7 @@ import Header from "@/components/Header.vue";
 import Navigation from "@/components/Navigation.vue";
 import UserInfos from "@/components/UserInfos.vue";
 import Iframe from "@/components/Personalization/Iframe.vue";
-import General from "@/components/Personalization/mobygeek.vue";
+import Moby_geek from "@/components/Personalization/mobygeek.vue";
 
 export default {
 
@@ -32,7 +32,7 @@ export default {
     Navigation,
     UserInfos,
     Iframe,
-    General,
+    Moby_geek,
   },
   data() {
     return {
@@ -40,9 +40,6 @@ export default {
       client_id: "",
       updateDate: new Date(),
     };
-  },
-  mounted() {
-    console.log(this.$auth.user);
   },
   computed: {
     getMinutes: function() {

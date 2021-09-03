@@ -551,7 +551,7 @@
 
 <script>
 import InlineSvg from "vue-inline-svg";
-import { getClientById } from "../../modules/clients";
+import { getClientByAuth_id } from "../../modules/clients";
 import { getConfigById, updateConfigById } from "../../modules/configurateurs";
 export default {
   components: {
@@ -602,7 +602,7 @@ export default {
         },
       ],
       activeBtn: "General",
-      idClient: "612e06aa3de4370f3dfa892d",
+      idClient: "",
       componentKey: 0,
       isMounted: false,
       datasClient: {
@@ -626,8 +626,9 @@ export default {
     };
   },
   async mounted() {
-    await getClientById(this.idClient).then((res) => {
-      this.datasClient.configurateurs_id = res.data.configurateurs;
+    this.idClient = this.$auth.user.sub;
+    await getClientByAuth_id(this.idClient).then((res) => {
+      this.datasClient.configurateurs_id = res.data[0].configurateurs;
     });
 
     await getConfigById(this.datasClient.configurateurs_id[0]).then((res) => {

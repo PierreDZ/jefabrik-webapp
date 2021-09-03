@@ -43,9 +43,28 @@ module.exports.getAllClients = async () => {
   }
 };
 
-module.exports.getClientById = async (id) => {
+// module.exports.getClientById = async (id) => {
+//   try {
+//     const clientFound = await Client.findById(id);
+//     if (!clientFound) return { code: 404, data: { error: "No client found" } };
+
+//     return {
+//       code: 200,
+//       data: clientFound,
+//     };
+//   } catch (error) {
+//     return {
+//       code: 500,
+//       data: {
+//         error: "Problem retrieving Client",
+//       },
+//     };
+//   }
+// };
+
+module.exports.getClientByAuth_id = async (id) => {
   try {
-    const clientFound = await Client.findById(id);
+    const clientFound = await Client.find({ auth_id: id });
     if (!clientFound) return { code: 404, data: { error: "No client found" } };
 
     return {

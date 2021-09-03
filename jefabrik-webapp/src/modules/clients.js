@@ -15,7 +15,22 @@ async function getClients() {
     }
   }
 
-  async function getClientById(id) {
+  // async function getClientById(id) {
+  //   try {
+  //     const res = await Vue.prototype.$http({
+  //       url: "clients/" + id,
+  //       method: "get",
+  //     });
+  //     return res;
+  //   } catch (e) {
+  //     console.log("error ! ", e);
+  //     return {
+  //       error: e,
+  //     };
+  //   }
+  // }
+
+  async function getClientByAuth_id(id) {
     try {
       const res = await Vue.prototype.$http({
         url: "clients/" + id,
@@ -30,4 +45,4 @@ async function getClients() {
     }
   }
 
-  export { getClients, getClientById }
+  export { getClients, getClientByAuth_id }

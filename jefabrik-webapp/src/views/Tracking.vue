@@ -86,9 +86,8 @@ export default {
           this.labels.push(elem.dimensionValues[0].value);
           this.dataDatas.push(elem.metricValues[0].value);
         });
-        this.labels.sort((a, b) => {
-          return a - b;
-        });
+        console.log(this.labels);
+        console.log(this.dataDatas);
         this.labels.forEach((elem, i) => {
           this.labels[i] = this.formatDate(elem);
         });
@@ -112,9 +111,6 @@ export default {
         this.userListSessions.forEach((elem) => {
           this.labelsSessions.push(elem.dimensionValues[0].value);
           this.dataDatasSessions.push(elem.metricValues[0].value);
-        });
-        this.labelsSessions.sort((a, b) => {
-          return a - b;
         });
         this.labelsSessions.forEach((elem, i) => {
            this.labelsSessions[i] = this.formatDate(elem);

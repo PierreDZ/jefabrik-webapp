@@ -19,9 +19,10 @@ const analyticsDataClient = new BetaAnalyticsDataClient();
 module.exports.runReport = async () => {
   const [response] = await analyticsDataClient.runReport({
     property: `properties/${propertyId}`,
-    dateRanges: [{ startDate: "28daysAgo", endDate: "today" }],
+    dateRanges: [{ startDate: "7daysAgo", endDate: "today" }],
     dimensions: [{ name: "date" }],
     metrics:    [{ name: "activeUsers" }],
+    orderBys: [{ dimension: { orderType: "ALPHANUMERIC", dimensionName: "date" } } ]
   });
 
   return response;
@@ -31,9 +32,10 @@ module.exports.runReport = async () => {
 module.exports.runReportCountries = async () => {
   const [response] = await analyticsDataClient.runReport({
     property: `properties/${propertyId}`,
-    dateRanges: [{ startDate: "28daysAgo", endDate: "today" }],
-    dimensions: [{ name: "country" }],
+    dateRanges: [{ startDate: "7daysAgo", endDate: "today" }],
+    dimensions: [{ name: "city" }],
     metrics:    [{ name: "activeUsers" }],
+    limit: 10
   });
 
   return response;
@@ -42,9 +44,10 @@ module.exports.runReportCountries = async () => {
 module.exports.runReportSessions = async () => {
   const [response] = await analyticsDataClient.runReport({
     property: `properties/${propertyId}`,
-    dateRanges: [{ startDate: "28daysAgo", endDate: "today" }],
+    dateRanges: [{ startDate: "7daysAgo", endDate: "today" }],
     dimensions: [{ name: "date" }],
-    metrics:    [{ name: "sessions" }],
+    metrics:    [{ name: "engagementRate" }],
+    orderBys: [{ dimension: { orderType: "ALPHANUMERIC", dimensionName: "date" } } ]
   });
 
   return response;
@@ -53,7 +56,7 @@ module.exports.runReportSessions = async () => {
 module.exports.runReportConversions = async () => {
   const [response] = await analyticsDataClient.runReport({
     property: `properties/${propertyId}`,
-    dateRanges: [{ startDate: "28daysAgo", endDate: "today" }],
+    dateRanges: [{ startDate: "7daysAgo", endDate: "today" }],
     dimensions: [{ name: "date" }],
     metrics:    [{ name: "purchaseRevenue" }],
   });
