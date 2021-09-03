@@ -11,10 +11,6 @@
           <button class="btn" v-if="!$auth.isAuthenticated" @click="login">
             Connect to the App
           </button>
-          <!-- show logout when authenticated -->
-          <button class="btn" v-if="$auth.isAuthenticated" @click="logout">
-            Log out
-          </button>
         </div>
       </div>
     </section>
