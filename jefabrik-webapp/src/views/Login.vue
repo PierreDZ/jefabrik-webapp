@@ -11,6 +11,9 @@
           <button class="btn" v-if="!$auth.isAuthenticated" @click="login">
             Connect to the App
           </button>
+          <button class="btn" v-if="$auth.isAuthenticated" @click="logout">
+            Log out
+          </button>
         </div>
       </div>
     </section>
@@ -28,10 +31,10 @@ export default {
     },
     logout() {
       this.$auth.logout({
-        returnTo: window.location.origin,
-      });
-    },
-  },
+        returnTo: window.location.origin
+      })
+    }
+  }
 };
 </script>
 

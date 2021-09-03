@@ -41,6 +41,7 @@ export default {
 
     img {
       margin-bottom: 20px;
+      border-radius: 50%;
     }
 
     span {
@@ -56,8 +57,7 @@ export default {
     }
 
     button {
-      width: 149px;
-      height: 57px;
+      padding: 10px 10px;
       font-size: 18px;
       color: #767676;
       background: none;
@@ -75,9 +75,22 @@ export default {
           color: white;
         }
       }
-      &:nth-child(5):hover {
-        border: 2px solid #33A9FF;
-        color: #33A9FF;
+      &:nth-child(5) {
+        margin-bottom: 40px;
+
+        &:hover {
+          border: 2px solid #33A9FF;
+          color: #33A9FF;
+        }
+      }
+      &:nth-child(6) {
+        background-color: #d62828;
+        color: white;
+        border: 2px solid #d62828;
+        &:hover {
+          color: #d62828;
+          background-color: white;
+        }
       }
     }
   }
