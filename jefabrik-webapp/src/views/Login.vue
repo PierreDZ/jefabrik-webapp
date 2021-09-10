@@ -28,7 +28,7 @@ export default {
       // this.$auth.loginWithRedirect({
       //   redirect_uri: window.location.origin + "/Dashboard"
       // });
-      window.location.href = 'http://localhost:8080/Dashboard';
+      window.location.href = '/Dashboard';
     },
     logout() {
       this.$auth.logout({
