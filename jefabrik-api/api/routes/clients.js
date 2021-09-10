@@ -13,22 +13,11 @@ router.get("/", async (req, res) => {
   }
 });
 
- /* GET client by ID. */
-// router.get("/:id", async (req, res) => {
-//   try {
-//     const id = req.params.id.toString();
-//     const response = await ClientController.getClientById(id);
-//     res.status(response.code).send(response.data);
-//   } catch (error) {
-//     res.status(500).send(error);
-//   }
-// });
-
 /* GET client by ID AUTH0. */
-router.get("/:auth_id", async (req, res) => {
+router.get("/:id", async (req, res) => {
   try {
-    const auth_id = req.params.auth_id.toString();
-    const response = await ClientController.getClientByAuth_id(auth_id);
+    const id = req.params.id.toString();
+    const response = await ClientController.getClientByAuth_id(id);
     res.status(response.code).send(response.data);
   } catch (error) {
     res.status(500).send(error);
