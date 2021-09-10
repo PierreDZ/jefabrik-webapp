@@ -8,12 +8,12 @@
         <p>Let's get started</p>
         <div v-if="!$auth.loading">
           <!-- show login when not authenticated -->
-          <button class="btn" v-if="!$auth.isAuthenticated" @click="login">
+          <button class="btn" @click="login">
             Connect to the App
           </button>
-          <button class="btn" v-if="$auth.isAuthenticated" @click="logout">
+          <!-- <button class="btn" v-if="$auth.isAuthenticated" @click="logout">
             Log out
-          </button>
+          </button> -->
         </div>
       </div>
     </section>
@@ -25,9 +25,10 @@ export default {
   name: "Login",
   methods: {
     login() {
-      this.$auth.loginWithRedirect({
-        redirect_uri: window.location.origin + "/Dashboard"
-      });
+      // this.$auth.loginWithRedirect({
+      //   redirect_uri: window.location.origin + "/Dashboard"
+      // });
+      window.location.href = 'http://localhost:8080/Dashboard';
     },
     logout() {
       this.$auth.logout({
